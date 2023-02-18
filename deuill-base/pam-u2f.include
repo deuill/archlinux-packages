@@ -1,0 +1,3 @@
+# Include this file in any of your PAM services to enable U2F key authentication:
+# echo "auth include u2f" >> /etc/pam.d/sudo
+auth required pam_u2f.so authfile=/etc/u2f/keys nouserok cue

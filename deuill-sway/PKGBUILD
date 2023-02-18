@@ -1,0 +1,39 @@
+# Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
+pkgname=deuill-sway
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Basic Sway-based desktop for deuill systems"
+arch=("any")
+url="https://git.deuill.org/deuill/archlinux-packages"
+license=("MIT")
+depends=(
+    # Core dependencies.
+    sway
+    swaybg
+    swaylock
+    swayidle
+    xorg-xwayland
+
+    # Secondary dependencies.
+    python-i3ipc
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr
+
+    # Common fonts.
+    ttf-ibm-plex
+    ttf-liberation
+    noto-fonts
+    noto-fonts-emoji
+
+    # Additional utilities and daemons.
+    brightnessctl
+    dunst
+    gammastep
+    rofi
+    rofi-calc
+    waybar
+    wl-clipboard
+    xdg-utils
+    xdg-user-dirs
+)
+install="$pkgname.install"

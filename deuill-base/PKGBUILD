@@ -1,0 +1,65 @@
+# Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
+pkgname=deuill-base
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Base system configuration for deuill systems"
+arch=("any")
+url="https://git.deuill.org/deuill/archlinux-packages"
+license=("MIT")
+depends=(
+    # System daemons.
+    iwd
+    bluez
+    mpd
+    pipewire
+    pipewire-alsa
+    pipewire-pulse
+    wireplumber
+    openssh
+    pcsclite
+
+    # System utilities and dependencies.
+    fish
+    man-db
+    kmscon
+    bluez-utils
+    ttc-iosevka
+    ripgrep
+    pam-u2f
+    gcr
+
+    # User utilities and dependencies.
+    git
+    btop
+    emacs
+    pass
+    pass-otp
+    pulsemixer
+    ncmpcpp
+)
+install="$pkgname.install"
+source=(
+    "systemd-networkd.ether"
+    "sudo.wheel"
+    "kmscon.conf"
+    "pam-u2f.include"
+)
+sha1sums=(
+    "cab8c8ba7cd4270cb19d8191c0a2755b7beddb3b"
+    "c005d5b81e05db26b931ecd55f4487868764b61a"
+    "6450c7e7f33985ae65321826feed602b6af99ec3"
+    "6c4c38e53d1c168d6becb24679a83e95cb070dee"
+)
+
+package() {
+    # Set up networking.
+    install -Dm 0644 systemd-networkd.ether "$pkgdir/etc/systemd/network/20-ether.network"
+    # Set up default configuration for sudo.
+    install -dm 0750 "$pkgdir/etc/sudoers.d"
+    install -Dm 0644 sudo.wheel "$pkgdir/etc/sudoers.d/wheel"
+    # Set up default configuration for kmscon.
+    install -Dm 0644 kmscon.conf "$pkgdir/etc/kmscon/kmscon.conf"
+    # Set up default configuration for pam-u2f.
+    install -Dm 0644 pam-u2f.include "$pkgdir/etc/pam.d/u2f"
+    install -dm 0750 "$pkgdir/etc/u2f"
+}
