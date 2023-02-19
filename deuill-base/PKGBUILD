@@ -10,11 +10,6 @@ depends=(
     # System daemons.
     iwd
     bluez
-    mpd
-    pipewire
-    pipewire-alsa
-    pipewire-pulse
-    wireplumber
     openssh
     pcsclite
 
@@ -22,20 +17,12 @@ depends=(
     fish
     man-db
     kmscon
-    bluez-utils
     ttc-iosevka
-    ripgrep
     pam-u2f
     gcr
 
     # User utilities and dependencies.
     git
-    btop
-    emacs
-    pass
-    pass-otp
-    pulsemixer
-    ncmpcpp
 )
 install="$pkgname.install"
 source=(

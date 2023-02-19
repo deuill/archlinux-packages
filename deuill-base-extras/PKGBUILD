@@ -1,0 +1,28 @@
+# Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
+pkgname=deuill-base-extras
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Extra packages in base configuration for deuill systems"
+arch=("any")
+url="https://git.deuill.org/deuill/archlinux-packages"
+license=("MIT")
+depends=(
+    # System daemons.
+    mpd
+    pipewire
+    pipewire-alsa
+    pipewire-pulse
+    wireplumber
+
+    # User utilities and dependencies.
+    bluez-utils
+    btop
+    emacs
+    ncmpcpp
+    pass
+    pass-otp
+    pulsemixer
+    ripgrep
+    unrar
+    unzip
+)
