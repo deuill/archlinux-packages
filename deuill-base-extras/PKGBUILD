@@ -15,6 +15,9 @@ depends=(
     wireplumber
 
     # User utilities and dependencies.
+    aspell
+    aspell-el
+    aspell-en
     bluez-utils
     btop
     emacs

@@ -7,14 +7,24 @@ arch=("any")
 url="https://git.deuill.org/deuill/archlinux-packages"
 license=("MIT")
 depends=(
-    # Utilities.
+    # Graphical applications.
     alacritty
     imv
     thunar
-    tumbler
     zathura
-    zathura-pdf-poppler
+    zathura-pdf-mupdf
+    zathura-cb
+
+    # Terminal applications.
+    aerc
+    calcurse
+
+    # Additional libraries.
+    python-httplib2
+    python-pyparsing
 
     # Support packages.
     materia-gtk-theme
+    papirus-icon-theme
+    tumbler
 )

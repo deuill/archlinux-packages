@@ -35,5 +35,7 @@ depends=(
     wl-clipboard
     xdg-utils
     xdg-user-dirs
+    perl-file-mimeinfo
+    xorg-xrdb
 )
 install="$pkgname.install"
