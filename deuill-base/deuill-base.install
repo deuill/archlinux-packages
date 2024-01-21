@@ -3,6 +3,10 @@ post_install() {
     systemctl enable --now systemd-resolved
     systemctl enable --now systemd-networkd
 
+    echo "Enabling NTP clock synchronization with systemd-timesyncd..."
+    systemctl enable --now systemd-timesyncd
+    timedatectl set-ntp true
+
     echo "Enabling PCSC socket for GPG cards..."
     systemctl enable --now pcscd.socket
 
