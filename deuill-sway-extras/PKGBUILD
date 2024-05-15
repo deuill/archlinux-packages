@@ -17,7 +17,7 @@ depends=(
 
     # Terminal applications.
     aerc
-    calcurse
+    khal
 
     # Additional libraries.
     python-httplib2
@@ -27,4 +27,5 @@ depends=(
     materia-gtk-theme
     papirus-icon-theme
     tumbler
+    vdirsyncer
 )
