@@ -17,6 +17,7 @@ depends=(
 
     # Terminal applications.
     aerc
+    elinks
     khal
 
     # Additional libraries.
