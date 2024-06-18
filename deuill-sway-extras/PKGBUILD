@@ -12,7 +12,7 @@ depends=(
     imv
     thunar
     zathura
-    zathura-pdf-mupdf
+    zathura-pdf-poppler
     zathura-cb
 
     # Terminal applications.
@@ -29,4 +29,5 @@ depends=(
     papirus-icon-theme
     tumbler
     vdirsyncer
+    cmark
 )
