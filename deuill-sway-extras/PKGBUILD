@@ -10,13 +10,13 @@ depends=(
     # Graphical applications.
     alacritty
     imv
-    thunar
     zathura
     zathura-pdf-poppler
     zathura-cb
 
     # Terminal applications.
     aerc
+    vifm
     elinks
     khal
 
@@ -25,9 +25,9 @@ depends=(
     python-pyparsing
 
     # Support packages.
+    ttf-nerd-fonts-symbols
     materia-gtk-theme
     papirus-icon-theme
-    tumbler
     vdirsyncer
     cmark
 )
