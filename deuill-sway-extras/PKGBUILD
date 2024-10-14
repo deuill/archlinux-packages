@@ -29,5 +29,6 @@ depends=(
     materia-gtk-theme
     papirus-icon-theme
     vdirsyncer
+    chafa
     cmark
 )
