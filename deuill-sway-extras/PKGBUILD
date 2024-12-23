@@ -11,7 +11,7 @@ depends=(
     alacritty
     imv
     zathura
-    zathura-pdf-poppler
+    zathura-pdf-mupdf
     zathura-cb
 
     # Terminal applications.
@@ -27,7 +27,9 @@ depends=(
     # Support packages.
     ttf-nerd-fonts-symbols
     materia-gtk-theme
+    mupdf-tools
     papirus-icon-theme
+    tesseract-data-eng
     vdirsyncer
     chafa
     cmark
