@@ -2,43 +2,108 @@
 pkgname=deuill-sway
 pkgver=1.0.0
 pkgrel=1
-pkgdesc="Basic Sway-based desktop for deuill systems"
+pkgdesc="Sway-based desktop environment for deuill systems"
 arch=("any")
 url="https://git.deuill.org/deuill/archlinux-packages"
 license=("MIT")
+source=(
+    "archlinux-packages::git+file://$(realpath ${PWD}/..)"
+)
+sha1sums=("SKIP")
+makedepends=(git)
 depends=(
     # Core dependencies.
+    rofi
     sway
     swaybg
-    swaylock
     swayidle
+    swaylock
+    waybar
     xorg-xwayland
 
-    # Secondary dependencies.
-    python-i3ipc
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-wlr
+    # Terminal applications.
+    aerc
+    btop
+    elinks
+    emacs
+    impala
+    khal
+    ncmpcpp
+    pulsemixer
+    vifm
 
-    # Common fonts.
-    ttf-ibm-plex
-    ttf-liberation
-    noto-fonts
-    noto-fonts-emoji
-
-    # Additional utilities and daemons.
+    # Graphical applications.
     foot
-    brightnessctl
+    mpv
+    swayimg
+    zathura
+    zathura-cb
+    zathura-pdf-mupdf
+
+    # System daemons.
     dunst
     gammastep
+    mpd
+    pipewire
+    pipewire-alsa
+    pipewire-pulse
+    vdirsyncer
+    wireplumber
+
+    # Secondary utilities and dependencies.
+    brightnessctl
+    chafa
+    cmark
     grim
+    mupdf-tools
+    pass
+    pass-otp
     perl-file-mimeinfo
-    rofi
+    python-i3ipc
+    ripgrep
     rofi-calc
     slurp
-    waybar
+    unrar
+    unzip
     wl-clipboard
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr
     xdg-user-dirs
     xdg-utils
     xorg-xrdb
+    zip
+
+    # Common fonts.
+    noto-fonts
+    noto-fonts-emoji
+    ttf-ibm-plex
+    ttf-liberation
+    ttf-nerd-fonts-symbols
+
+    # Themes.
+    materia-gtk-theme
+    papirus-icon-theme
+
+    # Additional libraries.
+    aspell
+    aspell-en
+    python-httplib2
+    python-pyparsing
+    tesseract-data-eng # Used for MuPDF.
 )
 install="$pkgname.install"
+
+package() {
+    # Copy support binaries.
+    install -dm 0755 "$pkgdir/usr/local/bin"
+    cp --recursive "$srcdir/archlinux-packages/$pkgname/files/bin/." "$pkgdir/usr/local/bin"
+    # Copy application shortcuts.
+    install -dm 0755 "$pkgdir/usr/local/share/applications"
+    cp --recursive "$srcdir/archlinux-packages/$pkgname/files/applications/." "$pkgdir/usr/local/share/applications"
+    # Install base login profile for Sway.
+    install -dm 0755 "$pkgdir/etc/skel"
+    cp --recursive "$srcdir/archlinux-packages/$pkgname/files/profile" "$pkgdir/etc/skel/.profile"
+    # Copy user configuration as system-wide defaults.
+    install -dm 0755 "$pkgdir/etc/skel/.config"
+    cp --recursive "$srcdir/archlinux-packages/$pkgname/files/skel/." "$pkgdir/etc/skel/.config"
+}
