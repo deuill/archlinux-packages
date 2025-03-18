@@ -26,16 +26,19 @@ depends=(
     noto-fonts-emoji
 
     # Additional utilities and daemons.
+    foot
     brightnessctl
     dunst
     gammastep
+    grim
+    perl-file-mimeinfo
     rofi
     rofi-calc
+    slurp
     waybar
     wl-clipboard
-    xdg-utils
     xdg-user-dirs
-    perl-file-mimeinfo
+    xdg-utils
     xorg-xrdb
 )
 install="$pkgname.install"

@@ -8,8 +8,7 @@ url="https://git.deuill.org/deuill/archlinux-packages"
 license=("MIT")
 depends=(
     # Graphical applications.
-    alacritty
-    imv
+    swayimg
     zathura
     zathura-pdf-mupdf
     zathura-cb

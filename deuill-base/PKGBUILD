@@ -8,21 +8,18 @@ url="https://git.deuill.org/deuill/archlinux-packages"
 license=("MIT")
 depends=(
     # System daemons.
-    iwd
     bluez
+    iwd
     openssh
     pcsclite
 
     # System utilities and dependencies.
+    bluez-utils
     fish
-    man-db
     kmscon
-    ttc-iosevka
+    man-db
     pam-u2f
-    gcr
-
-    # User utilities and dependencies.
-    git
+    ttc-iosevka
 )
 install="$pkgname.install"
 source=(
@@ -47,6 +44,6 @@ package() {
     # Set up default configuration for kmscon.
     install -Dm 0644 kmscon.conf "$pkgdir/etc/kmscon/kmscon.conf"
     # Set up default configuration for pam-u2f.
-    install -Dm 0644 pam-u2f.include "$pkgdir/etc/pam.d/u2f"
     install -dm 0750 "$pkgdir/etc/u2f"
+    install -Dm 0644 pam-u2f.include "$pkgdir/etc/pam.d/u2f"
 }

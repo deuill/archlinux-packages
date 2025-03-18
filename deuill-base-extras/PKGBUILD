@@ -16,11 +16,11 @@ depends=(
 
     # User utilities and dependencies.
     aspell
-    aspell-el
     aspell-en
-    bluez-utils
     btop
     emacs
+    git
+    impala
     ncmpcpp
     pass
     pass-otp
@@ -28,5 +28,5 @@ depends=(
     ripgrep
     unrar
     unzip
-    impala
+    zip
 )
