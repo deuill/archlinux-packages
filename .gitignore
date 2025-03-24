@@ -1,4 +1,5 @@
 .projectile-cache.eld
+.mypy_cache
 *.pkg.tar.zst
 *.tar.gz
 /**/pkg/

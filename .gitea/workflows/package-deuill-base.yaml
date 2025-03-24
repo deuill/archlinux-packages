@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - trunk
+    paths:
+      - 'deuill-base/**'
+      - '.gitea/workflows/package-deuill-base.yaml'
 jobs:
   build:
     runs-on: ubuntu-24.04
