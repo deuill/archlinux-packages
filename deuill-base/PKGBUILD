@@ -1,6 +1,6 @@
 # Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
 pkgname=deuill-base
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="Base system configuration for deuill systems"
 arch=("any")
@@ -20,15 +20,20 @@ depends=(
     man-db
     pam-u2f
     ttc-iosevka
+
+    # Other libraries.
+    intel-ucode
 )
 install="$pkgname.install"
 source=(
+    "mkinitcpio.hooks"
     "systemd-networkd.ether"
     "sudo.wheel"
     "kmscon.conf"
     "pam-u2f.include"
 )
 sha1sums=(
+    "6c5b2867f848e34d3c31bf5cfb3d72c33ad613d3"
     "cab8c8ba7cd4270cb19d8191c0a2755b7beddb3b"
     "c005d5b81e05db26b931ecd55f4487868764b61a"
     "6450c7e7f33985ae65321826feed602b6af99ec3"
@@ -36,6 +41,8 @@ sha1sums=(
 )
 
 package() {
+    # Set up hooks for full-disk encryption.
+    install -Dm 0644 mkinitcpio.hooks "$pkgdir/etc/mkinitcpio.conf.d/10-hooks.conf"
     # Set up networking.
     install -Dm 0644 systemd-networkd.ether "$pkgdir/etc/systemd/network/20-ether.network"
     # Set up default configuration for sudo.
