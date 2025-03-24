@@ -1,0 +1,30 @@
+name: Package Build for deuill-sway
+on:
+  push:
+    branches:
+      - trunk
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    name: Package Build for deuill-sway
+    env:
+      PACMAN: /bin/false # Debian doesn't package Pacman, but we don't need it either.
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y makepkg libarchive-tools curl
+      - name: Fix permissions
+        run: |
+          chown --recursive nobody:nogroup deuill-sway
+      - name: Build package
+        run: |
+          cd deuill-sway
+          sudo --preserve-env --user nobody -- makepkg --nodeps --nocolor
+      - name: Deploy package
+        run: |
+          curl --user ${{ vars.REPO_USERNAME }}:${{ secrets.REPO_PASSWORD }} \
+               --upload-file deuill-sway/deuill-sway-*.pkg.* \
+               ${{ vars.REPO_HOST }}/api/packages/${{ vars.REPO_OWNER }}/arch/${{ vars.REPO_NAME }}
