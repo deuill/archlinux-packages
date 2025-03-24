@@ -1,3 +1,4 @@
+.projectile-cache.eld
 *.pkg.tar.zst
 *.tar.gz
 /**/pkg/
