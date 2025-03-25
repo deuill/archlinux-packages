@@ -220,8 +220,11 @@ bindsym --to-code {
     }
 
     --no-repeat {
-        $mod+p       exec grim - | wl-copy --type image/png && notify-send "Screenshot Copied"
-        $mod+Shift+p exec grim -g $(slurp -d) - | wl-copy --type image/png && notify-send "Screenshot Copied"
+        $mod+p       exec grim && notify-send "Screenshot Saved"
+        $mod+Shift+p exec grim -g $(slurp -d) && notify-send "Screenshot Saved"
+
+        $mod+Ctrl+p       exec grim - | wl-copy --type image/png && notify-send "Screenshot Copied"
+        $mod+Ctrl+Shift+p exec grim -g $(slurp -d) - | wl-copy --type image/png && notify-send "Screenshot Copied"
     }
 
     # Modes.

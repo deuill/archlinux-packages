@@ -1,7 +1,7 @@
 # Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
 pkgname=deuill-sway
-pkgver=1.0.2
-pkgrel=2
+pkgver=1.0.3
+pkgrel=1
 pkgdesc="Sway-based desktop environment for deuill systems"
 arch=("any")
 url="https://git.deuill.org/deuill/archlinux-packages"
@@ -23,6 +23,7 @@ depends=(
 
     # Terminal applications.
     aerc
+    bluetui
     btop
     elinks
     emacs
@@ -55,6 +56,7 @@ depends=(
     chafa
     cmark
     grim
+    libnotify
     mupdf-tools
     pass
     pass-otp
@@ -79,6 +81,7 @@ depends=(
     ttf-ibm-plex
     ttf-liberation
     ttf-nerd-fonts-symbols
+    ttf-nerd-fonts-symbols-mono
 
     # Themes.
     materia-gtk-theme
@@ -89,7 +92,6 @@ depends=(
     aspell-en
     python-httplib2
     python-pyparsing
-    tesseract-data-eng # Used for MuPDF.
 )
 install="$pkgname.install"
 

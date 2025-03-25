@@ -1,6 +1,4 @@
 post_install() {
-    echo "Enabling user services..."
-    systemctl --user enable --now dunst gammastep pipewire
     echo "Enabling seatd..."
     systemctl enable --now seatd
     echo "Remember to add your user to the 'seat' group before using Sway!"
