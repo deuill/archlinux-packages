@@ -7,8 +7,14 @@ post_install() {
     systemctl enable --now systemd-timesyncd
     timedatectl set-ntp true
 
+    echo "Enabling home directory management with systemd-homed..."
+    systemctl enable --now systemd-homed
+
     echo "Enabling PCSC socket for GPG cards..."
     systemctl enable --now pcscd.socket
+
+    echo "Enabling wireless and bluetooth daemons..."
+    systemctl enable --now iwd bluetooth
 
     echo "Enabling systemd stub resolv.conf..."
     ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"

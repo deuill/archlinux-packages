@@ -1,7 +1,7 @@
 # Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
 pkgname=deuill-base
-pkgver=1.0.3
-pkgrel=2
+pkgver=1.0.4
+pkgrel=1
 pkgdesc="Base system configuration for deuill systems"
 arch=("any")
 url="https://git.deuill.org/deuill/archlinux-packages"
@@ -15,6 +15,7 @@ depends=(
 
     # System utilities and dependencies.
     bluez-utils
+    git
     fish
     man-db
     pam-u2f
