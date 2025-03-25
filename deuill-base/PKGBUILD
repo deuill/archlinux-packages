@@ -1,6 +1,6 @@
 # Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
 pkgname=deuill-base
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 pkgdesc="Base system configuration for deuill systems"
 arch=("any")
@@ -27,14 +27,16 @@ depends=(
 install="$pkgname.install"
 source=(
     "mkinitcpio.hooks"
-    "systemd-networkd.ether"
+    "systemd-networkd.wired"
+    "systemd-networkd.wireless"
     "sudo.wheel"
     "kmscon.conf"
     "pam-u2f.include"
 )
 sha1sums=(
     "6c5b2867f848e34d3c31bf5cfb3d72c33ad613d3"
-    "cab8c8ba7cd4270cb19d8191c0a2755b7beddb3b"
+    "10cdc4406049060b761045dbf69f49d1d3c00f2c"
+    "edde4cc264dceb662fb1b13e475b161da7d5585f"
     "c005d5b81e05db26b931ecd55f4487868764b61a"
     "6450c7e7f33985ae65321826feed602b6af99ec3"
     "6c4c38e53d1c168d6becb24679a83e95cb070dee"
@@ -44,7 +46,8 @@ package() {
     # Set up hooks for full-disk encryption.
     install -Dm 0644 mkinitcpio.hooks "$pkgdir/etc/mkinitcpio.conf.d/10-hooks.conf"
     # Set up networking.
-    install -Dm 0644 systemd-networkd.ether "$pkgdir/etc/systemd/network/20-ether.network"
+    install -Dm 0644 systemd-networkd.wired "$pkgdir/etc/systemd/network/20-wired.network"
+    install -Dm 0644 systemd-networkd.wireless "$pkgdir/etc/systemd/network/25-wireless.network"
     # Set up default configuration for sudo.
     install -dm 0750 "$pkgdir/etc/sudoers.d"
     install -Dm 0644 sudo.wheel "$pkgdir/etc/sudoers.d/wheel"
