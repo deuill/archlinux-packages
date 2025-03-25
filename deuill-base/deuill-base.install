@@ -10,9 +10,6 @@ post_install() {
     echo "Enabling PCSC socket for GPG cards..."
     systemctl enable --now pcscd.socket
 
-    echo "Enabling KMSCON on all virtual terminals..."
-    ln -sf "/usr/lib/systemd/system/kmsconvt@.service" "/etc/systemd/system/autovt@.service"
-
     echo "Enabling systemd stub resolv.conf..."
     ln -sf "/run/systemd/resolve/stub-resolv.conf" "/etc/resolv.conf"
 
@@ -22,8 +19,4 @@ post_install() {
 post_upgrade() {
     echo "Reloading network configuration..."
     networkctl reload
-}
-
-post_remove() {
-    rm -f "/etc/systemd/system/autovt@.service"
 }
