@@ -1,0 +1,3 @@
+# Ensure systemd environment is consistent.
+exec systemctl --user import-environment XDG_SESSION_TYPE XCURSOR_THEME XCURSOR_SIZE
+exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd XDG_SESSION_TYPE XCURSOR_THEME XCURSOR_SIZE

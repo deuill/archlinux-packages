@@ -339,17 +339,12 @@ bar {
 # MISC & INCLUDES
 # ---------------
 
-# Ensure systemd environment is consistent.
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XCURSOR_THEME XCURSOR_SIZE
-exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XCURSOR_THEME XCURSOR_SIZE
-exec systemctl --user start sway-session.target
-
-# Apply configuration defaults for user environment.
-exec_always cat ~/.config/dconf/user-defaults | dconf load /
-exec_always xrdb -load ~/.config/Xresources
+# Load any additional global and user-defined configuration.
+include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*
 
 # Auto-start any executables placed in the 'autostart' directory.
 exec ~/.config/sway/autostart/*
 
-# Load any additional user-defined configuration.
-include ~/.config/sway/conf.d/*.conf
+# Ensure final systemd target is met.
+exec systemctl --user start sway-session.target
