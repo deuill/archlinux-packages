@@ -1,2 +1,0 @@
-# Enable full-disk encryption with systemd for early boot.
-HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-vconsole sd-encrypt block filesystems fsck)

@@ -1,7 +1,6 @@
 post_install() {
     echo "Enabling basic networking with systemd-networkd..."
-    systemctl enable --now systemd-resolved
-    systemctl enable --now systemd-networkd
+    systemctl enable --now systemd-resolved systemd-networkd
 
     echo "Enabling NTP clock synchronization with systemd-timesyncd..."
     systemctl enable --now systemd-timesyncd
