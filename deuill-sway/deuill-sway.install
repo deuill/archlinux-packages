@@ -1,4 +1,7 @@
 post_install() {
+    echo "Enabling lemurs login manager..."
+    systemctl enable lemurs
+
     echo "Enabling seatd..."
     systemctl enable --now seatd
     echo "Remember to add your user to the 'seat' group before using Sway!"

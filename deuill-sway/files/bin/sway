@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Wrapper over vendor-provided 'sway' executable, applying additional setup and
+# launching with systemd support.
+
+# Set system-wide environment from systemd environment.
+for conf in ~/.config/environment.d/*.conf; do
+    set -a; source "$conf"; set +a
+done
+
+# Import specific environment variables for user units.
+systemctl --user import-environment PATH
+
+# Start Sway with systemd.
+exec systemd-cat --identifier=sway /usr/bin/sway "$@"
