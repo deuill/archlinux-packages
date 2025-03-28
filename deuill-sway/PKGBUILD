@@ -1,6 +1,6 @@
 # Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
 pkgname=deuill-sway
-pkgver=1.0.6
+pkgver=1.0.7
 pkgrel=1
 pkgdesc="Sway-based desktop environment for deuill systems"
 arch=("any")
