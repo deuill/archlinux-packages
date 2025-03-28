@@ -3,7 +3,9 @@
 # Wrapper over vendor-provided 'sway' executable, applying additional setup and
 # launching with systemd support.
 
-# Set system-wide environment from systemd environment.
+# Set system-wide environment variables for system and user-defined configuration.
+export XDG_CURRENT_DESKTOP=sway
+
 for conf in ~/.config/environment.d/*.conf; do
     set -a; source "$conf"; set +a
 done

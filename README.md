@@ -7,7 +7,13 @@ up a complete, consistent system.
 
 Check individual package folders for more specific information on their use and contents.
 
-## Repository Configuration
+## Prerequisites
+
+It is assumed that a bare-minimal, bootable system is in place before any package here is installed;
+however, a long-running system with non-default system configuration might find this clashing with
+configuration installed by packages. Caveat emptor.
+
+## Adding Custom Repository
 
 All packages defined here are available to install via a custom repository; to configure this on an
 existing ArchLinux system, first download and add the repository key to `pacman`:
@@ -19,8 +25,8 @@ $ curl --silent --fail -o - https://git.deuill.org/api/packages/deuill/arch/repo
 Ensure that the key was added correctly, and sign the key:
 
 ```sh
-$ pacman-key --list-keys 'Arch Registry'
-$ pacman-key --lsign-key <key-id> # Insert key ID returned by previous command.
+$ pacman-key --list-keys
+$ pacman-key --lsign-key 'Arch Registry' # Or whatever the key name or ID was above.
 ```
 
 Then, add the repository to the bottom of `pacman.conf`:
