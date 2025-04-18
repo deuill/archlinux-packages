@@ -1,6 +1,6 @@
 post_install() {
-    echo "Enabling lemurs login manager..."
-    systemctl enable lemurs
+    echo "Enabling greetd login manager..."
+    systemctl enable greetd
 
     echo "Enabling seatd..."
     systemctl enable --now seatd

@@ -13,7 +13,8 @@ sha1sums=("SKIP")
 makedepends=(git)
 depends=(
     # Core dependencies.
-    lemurs
+    greetd
+    greetd-tuigreet
     rofi
     sway
     swaybg
