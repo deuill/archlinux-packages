@@ -1,6 +1,6 @@
 * {
-    font-family: Iosevka, Ionicons;
-    font-size: 1.25rem;
+    font-family: Iosevka Term;
+    font-size: 1.15rem;
 }
 
 tooltip {
@@ -83,8 +83,4 @@ tooltip {
 
 #battery.critical {
     color: #ab4642;
-}
-
-#clock tooltip * {
-    color: #cc0000;
 }

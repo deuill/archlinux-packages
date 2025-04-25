@@ -26,7 +26,7 @@
 			"critical": 15
 		},
 		"format": "<span color='#585858' size='smaller'>bat</span> {capacity}%",
-		"on-click": "sensible-terminal -e battop",
+		"on-click": "sensible-terminal -T 'Battery Information' -e battop",
 		"max-length": 25
 	},
 	"bluetooth": {
@@ -38,12 +38,12 @@
 		"tooltip-format-connected": "Controller:  {controller_alias} ({controller_address})\nConnections: {num_connections}{device_enumerate}",
 		"tooltip-format-enumerate-connected": "\n\nDevice: {device_alias} ({device_address})",
 		"tooltip-format-enumerate-connected-battery": "\n\nDevice:  {device_alias} ({device_address})\nBattery: {device_battery_percentage}%",
-		"on-click": "sensible-terminal -e bluetui"
+		"on-click": "sensible-terminal -T 'Bluetooth Devices' -e bluetui"
 	},
 	"clock": {
-		"format": "<span color='#585858' size='smaller'>time</span> {:%H:%M %Z}",
+		"format": "<span color='#585858' size='smaller'>time</span> {:%H:%M}",
 		"format-alt": "<span color='#585858' size='smaller'>date</span> {:%A, %d %B %H:%M %Z}",
-		"on-click-right": "sensible-terminal -e ikhal",
+		"on-click-right": "sensible-terminal -T 'Calendar' -e ikhal",
 		"calendar": {
 			"mode": "year",
 			"mode-mon-col": 3,
@@ -63,8 +63,7 @@
 		"tooltip-format": "<tt><small>{calendar}</small></tt>",
 		"today-format": "<span color='#ab4642'>{}</span>",
 		"timezones": [
-			"Europe/London",
-			"America/New_York",
+			"",
 			"America/Los_Angeles"
 		],
 		"smooth-scrolling-threshold": 20
@@ -72,8 +71,7 @@
 	"cpu": {
 		"interval": 10,
 		"format": "<span color='#585858' size='smaller'>cpu</span> {usage}%",
-		"max-length": 10,
-		"on-click": "sensible-terminal -e btop"
+		"on-click": "sensible-terminal -T 'System Monitor' -e btop"
 	},
 	"custom/mpris": {
 		"format": "{} <span color='#585858' size='smaller'>{icon}</span>",
@@ -92,13 +90,13 @@
 		"on-scroll-down": "playerctl next"
 	},
 	"mpd": {
-		"format": "{artist} - {title} <span color='#585858' size='smaller'>{stateIcon}</span>",
+		"format": "{artist}<span color='#585858'> · </span>{title} <span color='#585858' size='smaller'>{stateIcon}</span>",
 		"format-stopped": "",
 		"format-disconnected": "",
 		"interval": 5,
 		"max-length": 60,
-		"artist-len": 40,
-		"title-len": 40,
+		"artist-len": 20,
+		"title-len": 20,
 		"state-icons": {
 			"paused": "paus",
 			"playing": "play"
@@ -107,32 +105,31 @@
 		"tooltip-format-disconnected": "MPD (Disconnected)",
 		"smooth-scrolling-threshold": 20,
 		"on-click": "mpc toggle",
-		"on-click-right": "sensible-terminal -e ncmpcpp",
+		"on-click-right": "sensible-terminal -T 'NCMPCpp' -e ncmpcpp",
 		"on-scroll-up": "mpc prev",
 		"on-scroll-down": "mpc next"
 	},
 	"memory": {
 		"interval": 30,
 		"format": "<span color='#585858' size='smaller'>mem</span> {}%",
-		"on-click": "sensible-terminal -e htop"
+		"on-click": "sensible-terminal -T 'System Monitor' -e btop"
 	},
 	"network": {
 		"format": "<span color='#585858' size='smaller'>net</span> {ifname}",
 		"format-wifi": "<span color='#585858' size='smaller'>wifi</span> {essid}",
-		"format-disconnected": "",
+		"format-disconnected": "<span color='#585858' size='smaller'>net</span> ⋯",
 		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
 		"tooltip-format-ethernet": "{ifname}",
 		"tooltip-format-disconnected": "Disconnected",
-		"on-click": "sensible-terminal -e impala",
+		"on-click": "sensible-terminal -T 'Network Devices' -e impala",
 		"max-length": 50
 	},
 	"pulseaudio": {
 		"format": "<span color='#585858' size='smaller'>vol</span> {volume}%",
-		"format-bluetooth": "<span color='#585858' size='smaller'>btvol</span> {volume}%",
 		"format-muted": "<span color='#585858' size='smaller'>vol</span> <span color='#ab4642'>{volume}%</span>",
 		"tooltip-format": "{desc}",
 		"scroll-step": 1,
-		"on-click": "sensible-terminal -e pulsemixer"
+		"on-click": "sensible-terminal -T 'Audio Devices' -e pulsemixer"
 	},
 	"sway/language": {
 		"format": "<span color='#585858' size='smaller'>key</span> {}",
@@ -154,7 +151,7 @@
 	},
 	"sway/window": {
 		"align": 0,
-		"format": "<span color='#585858' size='smaller'>⋮</span>",
+		"format": "<span color='#585858'>⋮</span>",
 		"icon": false,
 		"max-length": 50,
 		"on-click": "rofi -show drun -show-icons"
