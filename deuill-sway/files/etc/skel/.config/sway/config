@@ -18,7 +18,7 @@ set {
 set {
     $resize    "Resize Window"
     $mousekeys "Mouse Keys"
-    $session   "Session: Ⓢ Suspend, Ⓛ Logout, Ⓡ Reboot, Ⓟ Power off"
+    $session   "🆂 Suspend, 🅷 Hibernate, 🅻 Logout, 🆁 Reboot, 🅿 Power off"
 }
 
 # Application aliases.
@@ -292,6 +292,7 @@ mode $resize bindsym --to-code {
 
 mode $session bindsym --to-code {
     s exec systemctl suspend, mode "default"
+    h exec systemctl hibernate, mode "default"
     l exec swaymsg exit, mode "default"
     r exec systemctl reboot, mode "default"
     p exec systemctl poweroff -i, mode "default"
