@@ -127,7 +127,7 @@ fileviewer ../ tree %c -C -L 1
 fileviewer {*.json},<text/*>
          \ highlight --out-format truecolor --style base16/default-dark %c
 filetype {*.json},<text/*>
-         \ emacsclient --no-window-system %c 2>/dev/null
+         \ emacs --no-window-system %c 2>/dev/null
 
 " Documents
 fileviewer {*.pdf,*.epub},<application/pdf>

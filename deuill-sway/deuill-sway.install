@@ -3,6 +3,6 @@ post_install() {
     systemctl enable greetd
 
     echo "Enabling seatd..."
-    systemctl enable --now seatd
+    systemctl enable seatd
     echo "Remember to add your user to the 'seat' group before using Sway!"
 }

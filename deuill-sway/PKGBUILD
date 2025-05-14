@@ -1,6 +1,6 @@
 # Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
 pkgname=deuill-sway
-pkgver=1.0.9
+pkgver=1.0.10
 pkgrel=1
 pkgdesc="Sway-based desktop environment for deuill systems"
 arch=("any")
@@ -47,6 +47,7 @@ depends=(
     dunst
     gammastep
     mpd
+    pipewire-jack
     pipewire
     pipewire-alsa
     pipewire-pulse
@@ -59,6 +60,7 @@ depends=(
     cmark
     grim
     libnotify
+    tesseract-data-eng
     mupdf-tools
     pass
     pass-otp
