@@ -129,7 +129,7 @@
 		"format-muted": "<span color='#585858' size='smaller'>vol</span> <span color='#ab4642'>{volume}%</span>",
 		"tooltip-format": "{desc}",
 		"scroll-step": 1,
-		"on-click": "sensible-terminal -T 'Audio Devices' -e pulsemixer"
+		"on-click": "sensible-terminal -T 'Audio Devices' -e wiremix"
 	},
 	"sway/language": {
 		"format": "<span color='#585858' size='smaller'>key</span> {}",

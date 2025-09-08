@@ -25,7 +25,6 @@ set {
 set {
     $launcher rofi
     $locker   swaylock -f
-    $mixer    pulsemixer --max-volume 100
     $terminal sensible-terminal
 }
 
@@ -198,9 +197,9 @@ bindsym --to-code {
 
     --no-repeat --locked {
         # Volume keys.
-        XF86AudioRaiseVolume exec $mixer --change-volume +5
-        XF86AudioLowerVolume exec $mixer --change-volume -5
-        XF86AudioMute        exec $mixer --toggle-mute
+        XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ --limit 1.0 0.05+
+        XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ --limit 1.0 0.05-
+        XF86AudioMute        exec wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle
 
         # Media keys.
         $mod+Ctrl+Up    exec mpc stop
@@ -216,7 +215,7 @@ bindsym --to-code {
         XF86AudioForward exec mpc seek 10+
 
         XF86MonBrightnessDown exec brightnessctl set 10%-
-        XF86MonBrightnessUp exec brightnessctl set +10%
+        XF86MonBrightnessUp   exec brightnessctl set +10%
     }
 
     --no-repeat {

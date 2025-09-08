@@ -32,7 +32,7 @@ depends=(
     impala
     khal
     ncmpcpp
-    pulsemixer
+    wiremix
     vifm
 
     # Graphical applications.
