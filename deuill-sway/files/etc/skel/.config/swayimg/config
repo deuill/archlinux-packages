@@ -10,14 +10,10 @@ transparency = grid
 scale = optimal
 # Initial image position
 position = center
-# Fix position of the image on the window surface (yes/no)
-fixed = yes
-# Anti-aliasing (yes/no)
-antialiasing = none
-# Run slideshow at startup (yes/no)
-slideshow = no
-# Slideshow image display time (seconds)
-slideshow_time = 3
+# Anti-aliasing mode (none/box/bilinear/bicubic/mks13)
+antialiasing = mks13
+# Loop image list: jump to first image when end of list is reached (yes/no)
+loop = yes
 # Number of previously viewed images to store in cache
 history = 1
 # Number of preloaded images (read ahead)
@@ -52,8 +48,6 @@ shadow = #00000000
 [list]
 # Default order (none/alpha/reverse/random)
 order = alpha
-# Looping list of images (yes/no)
-loop = yes
 # Read directories recursively (yes/no)
 recursive = no
 # Open all files in the directory of the specified file (yes/no)

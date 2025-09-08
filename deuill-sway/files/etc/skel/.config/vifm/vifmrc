@@ -106,6 +106,7 @@ mark r /
 "  see `:help vifm-macros` and `:help vifm-filename-modifiers` for more
 
 command! run    !! ./%f
+command! for for f in %f; do %a "$f"; done
 command! reload :write | restart full
 command! df df --human-readable %m 2>/dev/null
 command! du du --human-readable --time --all --total %m 2>/dev/null
