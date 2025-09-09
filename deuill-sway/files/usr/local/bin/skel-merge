@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+#
+# Merge files from /etc/skel down to a user's home directory, interactively.
+
+set -o pipefail
+set -o nounset
+
+# The default source directory, if none is given in the script arguments.
+DEFAULT_SOURCE_DIRECTORY="/etc/skel"
+
+# Converts the given source path to point to the HOME directory for the user, for the file path given.
+function source-path-to-home-path() {
+    local source="$1" path="$2"
+    echo "${HOME}${path#"${source}"}"
+}
+
+# Returns a list of absolute file paths in the source folder given, recursively.
+function source-list-files() {
+	local source="${1}"
+    find "$source" -type f
+}
+
+# Returns 'true' if files are different in any way, 'false' if not.
+function file-has-diff() {
+    local a="$1" b="$2"
+    ! diff --brief "$a" "$b" &> /dev/null
+}
+
+# Prints differences between two files.
+function file-print-diff() {
+    local target="$1" source="$2"
+    diff --unified --color=always "$target" "$source"
+}
+
+# Merges differences between two files.
+function file-merge-diff() {
+    local target="$1" source="$2"
+    diff --unified --color=never "$target" "$source" | patch --quiet --read-only fail --directory / --strip 0 --backup --reject-file - "$target"
+}
+
+# Asks for a "yes/no" response, defaulting to "no". First parameter is a human-readable prompt.
+function yes-no-prompt() {
+    local prompt="$1"
+    local answer
+
+    while true; do
+        printf "\n%s [y/N] " "$prompt"
+        read -r -n 1 answer
+        printf "\n"
+        if test -z "$answer" -o "$answer" = "n"; then
+            return 1
+        elif test "$answer" = "y"; then
+            return 0
+        fi
+    done
+}
+
+# Print usage information for `skel-merge`.
+function usage() {
+	printf "Usage: skel-merge [SOURCE]\n"
+    printf "Merge changes between SOURCE directory, by default /etc/skel, and user's HOME directory.\n"
+	exit 0
+}
+
+# Entrypoint, merge differences between source directory files and user's HOME, interactively.
+function main() {
+	local sourcedir="${1:-${DEFAULT_SOURCE_DIRECTORY}}"
+    local source target
+
+    # Check for valid source directory.
+	if [[ -z "$sourcedir" || "$sourcedir" == "-h" || "$sourcedir" == "--help" ]]; then
+        usage
+    elif [[ ! -d "$sourcedir" ]]; then
+        printf "Error: source directory not found: %s\n" "$sourcedir"
+        exit 1
+    fi
+
+    # Process all files in source directory.
+    for source in $(source-list-files "$sourcedir"); do
+        target="$(source-path-to-home-path "$sourcedir" "$source")"
+        if ! file-has-diff "$target" "$source"; then
+            continue
+        fi
+
+        file-print-diff "$target" "$source"
+        if yes-no-prompt "Diff for '$target' shown, accept merge?"; then
+            file-merge-diff "$target" "$source"
+        fi
+    done
+
+    printf "Done\n"
+}
+
+main "$@"
