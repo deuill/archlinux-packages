@@ -78,13 +78,14 @@ function main() {
     # Process all files in source directory.
     for source in $(source-list-files "$sourcedir"); do
         target="$(source-path-to-home-path "$sourcedir" "$source")"
-        if ! file-has-diff "$target" "$source"; then
-            continue
-        fi
-
-        file-print-diff "$target" "$source"
-        if yes-no-prompt "Diff for '$target' shown, accept merge?"; then
-            file-merge-diff "$target" "$source"
+        if ! test -e "$target"; then
+            printf "Copying missing source file into '$target'"
+            cp --force "$source" "$target"
+        elif file-has-diff "$target" "$source"; then
+            file-print-diff "$target" "$source"
+            if yes-no-prompt "Diff for '$target' shown, accept merge?"; then
+                file-merge-diff "$target" "$source"
+            fi
         fi
     done
 
