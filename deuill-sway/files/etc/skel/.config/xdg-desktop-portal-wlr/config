@@ -1,0 +1,6 @@
+[screencast]
+max_fps      = 30
+exec_before  = wl-mirror "$(swaymsg -t get_outputs | jq --raw-output '[.[] | select(.name | startswith("HEADLESS-"))][0] | .name')"
+exec_after   = swaymsg output "$(swaymsg -t get_outputs | jq --raw-output '[.[] | select(.name | startswith("HEADLESS-"))][0] | .name')" unplug
+chooser_type = dmenu
+chooser_cmd  = swaymsg -t get_outputs | jq --raw-output '.[] | .name' | dmenu
