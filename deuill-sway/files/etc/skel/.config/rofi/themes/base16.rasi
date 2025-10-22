@@ -101,7 +101,9 @@ element-icon {
 
 window {
     background-color: var(background);
+    border-color:     #585858;
     border-radius:    0;
+    border:           3px;
     location:         north;
     padding:          10px;
     y-offset:         5%;

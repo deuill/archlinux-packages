@@ -1,6 +1,6 @@
 {
 	"layer": "top",
-	"height": 32,
+	"height": 28,
 	"modules-left": [
 		"sway/window",
 		"mpd",
@@ -13,7 +13,7 @@
 	"modules-right": [
 		"bluetooth",
 		"network",
-		"pulseaudio",
+		"wireplumber",
 		"battery",
 		"sway/language",
 		"clock",
@@ -26,7 +26,7 @@
 			"critical": 15
 		},
 		"format": "<span color='#585858' size='smaller'>bat</span> {capacity}%",
-		"on-click": "sensible-terminal -T 'Battery Information' -e battop",
+		"on-click": "sensible-terminal --class floating -T 'Battery Information' -e battop",
 		"max-length": 25
 	},
 	"bluetooth": {
@@ -38,7 +38,7 @@
 		"tooltip-format-connected": "Controller:  {controller_alias} ({controller_address})\nConnections: {num_connections}{device_enumerate}",
 		"tooltip-format-enumerate-connected": "\n\nDevice: {device_alias} ({device_address})",
 		"tooltip-format-enumerate-connected-battery": "\n\nDevice:  {device_alias} ({device_address})\nBattery: {device_battery_percentage}%",
-		"on-click": "sensible-terminal -T 'Bluetooth Devices' -e bluetui"
+		"on-click": "sensible-terminal --class floating -T 'Bluetooth Devices' -e bluetui"
 	},
 	"clock": {
 		"format": "<span color='#585858' size='smaller'>time</span> {:%H:%M}",
@@ -121,15 +121,15 @@
 		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
 		"tooltip-format-ethernet": "{ifname}",
 		"tooltip-format-disconnected": "Disconnected",
-		"on-click": "sensible-terminal -T 'Network Devices' -e impala",
+		"on-click": "sensible-terminal --class floating -T 'Network Devices' -e impala",
 		"max-length": 50
 	},
-	"pulseaudio": {
+	"wireplumber": {
 		"format": "<span color='#585858' size='smaller'>vol</span> {volume}%",
 		"format-muted": "<span color='#585858' size='smaller'>vol</span> <span color='#ab4642'>{volume}%</span>",
-		"tooltip-format": "{desc}",
+		"tooltip-format": "{node_name}",
 		"scroll-step": 1,
-		"on-click": "sensible-terminal -T 'Audio Devices' -e wiremix"
+		"on-click": "sensible-terminal --class floating -T 'Audio Devices' -e wiremix"
 	},
 	"sway/language": {
 		"format": "<span color='#585858' size='smaller'>key</span> {}",

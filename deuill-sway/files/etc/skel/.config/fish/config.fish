@@ -1,9 +1,12 @@
 # Disable greeting text.
 set fish_greeting
 
+# Enable Vi keybindings.
+set fish_key_bindings fish_vi_key_bindings
+
 # Include local configuration.
 if [ -e $HOME/.config/fish/config.local ]
-	source $HOME/.config/fish/config.local
+    source $HOME/.config/fish/config.local
 end
 
 # Set default theme.
@@ -17,7 +20,7 @@ alias dot 'git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Set TERM='xterm' for SSH connections.
 function ssh -w ssh
-	env TERM=xterm ssh $argv
+    env TERM=xterm ssh $argv
 end
 
 # Defaults for GPG.

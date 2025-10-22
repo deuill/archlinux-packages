@@ -1,6 +1,6 @@
 # Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
 pkgname=deuill-sway
-pkgver=1.0.16
+pkgver=1.0.17
 pkgrel=1
 pkgdesc="Sway-based desktop environment for deuill systems"
 arch=("any")
@@ -57,11 +57,11 @@ depends=(
     # Secondary utilities and dependencies.
     brightnessctl
     chafa
-    cmark
     grim
     libnotify
     tesseract-data-eng
     mupdf-tools
+    pandoc
     pass
     pass-otp
     perl-file-mimeinfo
@@ -90,6 +90,7 @@ depends=(
     # Themes.
     materia-gtk-theme
     papirus-icon-theme
+    capitaine-cursors
 
     # Additional libraries.
     aspell
