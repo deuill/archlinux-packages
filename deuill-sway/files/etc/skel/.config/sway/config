@@ -30,7 +30,7 @@ set {
 
 # Display output configuration.
 output * {
-    scale 1
+    scale    2
     subpixel none
 }
 
@@ -63,7 +63,7 @@ input {
 
 seat * {
     # Set cursor theme for all seats.
-    xcursor_theme capitaine-cursors 32
+    xcursor_theme capitaine-cursors 24
 
     # Hide cursor after 30 seconds of inactivity.
     hide_cursor 30000
@@ -88,7 +88,7 @@ for_window {
 
 # Allow for specified floating windows.
 for_window {
-    [app_id="floating"] floating enable; border pixel 3
+    [app_id="floating"] floating enable; border pixel 2
 }
 
 # -----------
@@ -156,11 +156,11 @@ bindsym --to-code {
     $mod+e layout toggle split
 
     # Toggle tiling/floating
-    $mod+t       floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border pixel 3
+    $mod+t       floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border pixel 2
     $mod+Shift+t sticky toggle
 
     # Move to and show scratchpad.
-    $mod+minus        scratchpad show; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border pixel 3
+    $mod+minus        scratchpad show; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border pixel 2
     $mod++Shift+minus move scratchpad
 
     # Focus between floating and split containers.
@@ -243,17 +243,17 @@ bindsym --to-code {
 # ----------
 
 # Default font.
-font Iosevka 20
+font Iosevka 9
 
 # Wallpaper.
 output * bg ~/.config/sway/default-bg fill
 
 # Borders and gaps.
-default_border          pixel 3
-default_floating_border pixel 3
+default_border          pixel 2
+default_floating_border pixel 2
 hide_edge_borders --i3  smart
 
-gaps       inner 20
+gaps inner 10
 smart_gaps on
 
 # Color names.

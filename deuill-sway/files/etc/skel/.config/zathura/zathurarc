@@ -4,7 +4,7 @@ set database            sqlite
 set selection-clipboard clipboard
 
 # Appearance and theme.
-set font                    "Iosevka 20"
+set font                    "Iosevka 10"
 set guioptions              ""
 
 set default-bg              "#2d2d2d"

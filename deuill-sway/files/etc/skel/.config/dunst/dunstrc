@@ -3,7 +3,7 @@
 monitor = 0              # Which monitor should the notifications be displayed on.
 follow  = mouse          # Display notification on focused monitor.
 
-width  = (400, 600)   # The minimum and maximum width of any notification.
+width  = (200, 400)   # The minimum and maximum width of any notification.
 origin = bottom-right # The screen location from which notifications appear.
 offset = (20, 20)     # The horizontal and vertical edge offset for notifications.
 
@@ -19,8 +19,8 @@ shrink             = no  # Shrink window if it's smaller than the width.
 transparency       = 15  # The transparency of the window. Range: [0; 100].
 
 separator_height   = 2  # Draw a line of "separator_height" pixel height between two notifications.
-padding            = 15 # Padding between text and separator.
-horizontal_padding = 15 # Horizontal padding.
+padding            = 10 # Padding between text and separator.
+horizontal_padding = 10 # Horizontal padding.
 text_icon_padding  = 0  # Padding between text and icon.
 
 frame_width     = 2         # Width in pixels of frame around the notification window.
@@ -32,7 +32,7 @@ sort           = yes # Sort messages by urgency.
 idle_threshold = 120 # Don't remove messages, if the user is idle # for longer than idle_threshold seconds.
 
 # Text settings.
-font = Iosevka 18 # The font name and size.
+font = Iosevka 10 # The font name and size.
 line_height = 1   # The spacing between lines.
 
 markup = full            # Pango markup in notifications. Choice of 'full', 'strip', and 'no'.
@@ -53,8 +53,8 @@ show_indicators      = no  # Display indicators for URLs (U) and actions (A).
 # Icon settings.
 icon_path = /usr/share/icons/Adwaita/scalable/status/:/usr/share/icons/Adwaita/scalable/devices/
 icon_position = left # Icon alignment. Choice of 'left', 'right', 'off'.
-min_icon_size = 32   # Scale small icons up to this size, set to 0 to disable.
-max_icon_size = 64   # Scale larger icons down to this size, set to 0 to disable.
+min_icon_size = 16   # Scale small icons up to this size, set to 0 to disable.
+max_icon_size = 32   # Scale larger icons down to this size, set to 0 to disable.
 
 # History settings.
 sticky_history = yes # Whether notifications from history should be sticky.

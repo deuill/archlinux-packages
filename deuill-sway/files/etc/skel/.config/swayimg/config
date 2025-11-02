@@ -60,7 +60,7 @@ all = yes
 # Font name
 name = Iosevka
 # Font size (pt)
-size = 18
+size = 10
 # Font color (RGBA)
 color = #fefefeff
 # Shadow color (RGBA)

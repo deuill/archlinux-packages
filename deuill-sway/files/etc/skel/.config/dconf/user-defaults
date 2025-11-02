@@ -1,5 +1,5 @@
 [org/gnome/desktop/interface]
-document-font-name="IBM Plex Sans 16"
-font-name="IBM Plex Sans 16"
-monospace-font-name="IBM Plex Mono 16"
+document-font-name="IBM Plex Sans 9"
+font-name="IBM Plex Sans 9"
+monospace-font-name="IBM Plex Mono 9"
 cursor-theme="capitaine-cursors"

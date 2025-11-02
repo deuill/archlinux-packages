@@ -37,7 +37,7 @@
 element {
     border-radius: 0;
     border:        0;
-    padding:       20px;
+    padding:       10px 12px;
     spacing:       5px;
 }
 
@@ -103,7 +103,7 @@ window {
     background-color: var(background);
     border-color:     #585858;
     border-radius:    0;
-    border:           3px;
+    border:           2px;
     location:         north;
     padding:          10px;
     y-offset:         5%;
@@ -187,7 +187,7 @@ case-indicator {
 }
 
 entry {
-    padding: 10px;
+    padding: 5px;
     placeholder-color: #585858;
     placeholder: "Type to filter or search...";
     spacing: 0;
