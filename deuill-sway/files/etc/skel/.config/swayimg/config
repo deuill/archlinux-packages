@@ -95,6 +95,8 @@ j = zoom -10
 k = zoom +10
 l = next_file
 
+y = exec wl-copy < '%'
+
 Shift+h = prev_dir
 Shift+j = rotate_left
 Shift+k = rotate_right
