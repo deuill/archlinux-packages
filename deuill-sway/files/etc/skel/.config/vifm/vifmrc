@@ -111,6 +111,7 @@ command! reload :write | restart full
 command! df df --human-readable %m 2>/dev/null
 command! du du --human-readable --time --all --total %m 2>/dev/null
 command! extract for f in %f; do bsdtar --extract --file "$f"; done &>/dev/null &
+command! zip zip --recurse-paths %a %f &>/dev/null &
 command! wallpaper sway-wallpaper %a %c:p 2>/dev/null &
 
 " ------------------------------------------------------------------------------
@@ -124,18 +125,12 @@ command! wallpaper sway-wallpaper %a %c:p 2>/dev/null &
 fileviewer */ tree %c -C
 fileviewer ../ tree %c -C -L 1
 
-" Code & Data
-fileviewer {*.json},<text/*>
-         \ highlight --out-format truecolor --style base16/default-dark %c
-filetype {*.json},<text/*>
-         \ emacs --no-window-system %c 2>/dev/null
-
 " Documents
 fileviewer {*.pdf,*.epub},<application/pdf>
           \ mutool draw -P -i -q  -F png -o - %c 1 2>/dev/null |
           \ chafa --polite on --preprocess on --symbols all --colors full --size %pwx%ph 2>/dev/null
 fileviewer {*.docx,*.rtf,*.odt} pandoc --to plain --columns %pw %c 2>/dev/null
-fileviewer {*.htm,*.html} elinks -localhost 1 -force-html -dump %c 2>/dev/null
+fileviewer {*.htm,*.html},<text/html> elinks -localhost 1 -force-html -dump 1 -dump-width %pw %c 2>/dev/null
 fileviewer {*.cbz,*.cbr,*.cb7}
          \ bsdtar --fast-read --to-stdout --extract --file %c '*.jpg' 2>/dev/null |
          \ chafa --polite on --preprocess on --symbols all --colors full --size %pwx%ph 2>/dev/null
@@ -147,6 +142,9 @@ fileviewer {*.7z,*.bz2,*.cab,*.cpio,*.deb,*.gz,*.msi,*.pkg,*.rar,*.tar,*.tgz,*.x
 filetype {*.7z,*.bz2,*.cab,*.cpio,*.deb,*.gz,*.msi,*.pkg,*.rar,*.tar,*.tgz,*.xz,*.zst,*.zip},<archive/*>
        \ {Mount with FUSE}
        \ FUSE_MOUNT|fuse-archive %SOURCE_FILE %DESTINATION_DIR
+filetype {*.iso}
+       \ {Mount with fuseiso}
+       \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR
 
 " Images
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg},<image/*>
@@ -160,6 +158,12 @@ fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.og[agx],*.opus,*.aac},<audio/*>
 fileviewer {*.avi,*.mp4,*.ogv,*.mkv,*.mpeg,*.webm,*.m4v,},<video/*>
          \ ffmpeg -i %c -f gif -frames:v 1 - 2>/dev/null |
          \ chafa --polite on --preprocess on --symbols all --colors full --size %pwx%ph 2>/dev/null
+
+" Code & Data
+fileviewer {*.json},<text/*>
+         \ highlight --out-format truecolor --style base16/default-dark %c
+filetype {*.json},<text/*>
+         \ emacs --no-window-system %c 2>/dev/null
 
 " Object
 filetype {*.o},<application/x-object> nm %f | less
