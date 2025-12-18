@@ -4,7 +4,7 @@ connected_message_on_startup = "no"
 main_window_color            = "default"
 centered_cursor              = "yes"
 enable_window_title          = "yes"
-external_editor              = "emacs --no-window-system"
+external_editor              = "nano"
 
 [header]
 header_visibility   = "yes"

@@ -1,0 +1,49 @@
+# Syntax highlights.
+include "/usr/share/nano/*.nanorc"
+include "/usr/share/nano/extra/*.nanorc"
+
+# Options
+set tabsize 4
+set tabstospaces
+set numbercolor yellow,normal
+set scrollercolor grey,normal
+set indicator       # side bar for indicating cur position
+set smarthome       # `Home` jumps to line start first
+set afterends       # `Ctrl+Right` move to word ends instead of word starts
+set wordchars "_"   # recognize '_' as part of a word
+set zap             # delete selected text as a whole
+set atblanks        # soft wrap at blank chars
+set historylog      # remember search history
+set nonewlines      # newline at end of file
+set multibuffer     # read files into multibuffer instead of insert
+set mouse           # enable mouse support
+set nohelp          # disable help when you are familiar enough
+
+# Keybindings
+bind   ^Q     exit         all
+bind   ^Z     suspend      main
+bind   M-R    redo         main
+bind   ^C     copy         main
+bind   ^V     paste        main
+bind   ^X     cut          main
+bind   ^K     zap          main
+bind   ^H     chopwordleft all
+bind   M-/    comment      main
+bind   ^Space complete     main
+bind   M-C    location     main
+bind   ^E     wherewas     all
+bind   M-E    findprevious all
+bind   ^R     replace      main
+bind   ^_     gotoline     main
+bind   ^G     firstline    all
+bind   M-G    lastline     all
+bind   ^B     pageup       all  # vim-like support
+bind   ^F     pagedown     all  # vim-like support
+bind   M-1    help         all  # fix ^G been used
+
+bind   Sh-M-C constantshow main # fix M-C been used
+bind   Sh-M-F formatter    main # fix M-F and M-B might be used
+bind   Sh-M-B linter       main
+
+unbind ^J  main # for those who rarely use justify
+unbind M-J main # for those who rarely use justify

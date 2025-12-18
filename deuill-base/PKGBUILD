@@ -1,6 +1,6 @@
 # Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
 pkgname=deuill-base
-pkgver=1.0.5
+pkgver=1.0.6
 pkgrel=1
 pkgdesc="Base system configuration for deuill systems"
 arch=("any")
@@ -20,6 +20,7 @@ depends=(
     man-db
     pam-u2f
     ttc-iosevka
+    nano
 
     # Other libraries.
     intel-ucode
