@@ -128,12 +128,12 @@ fileviewer ../ tree %c -C -L 1
 " Documents
 fileviewer {*.pdf,*.epub},<application/pdf>
           \ mutool draw -P -i -q  -F png -o - %c 1 2>/dev/null |
-          \ chafa --polite on --preprocess on --symbols all --colors full --size %pwx%ph 2>/dev/null
+          \ chafa --format symbols --polite on --preprocess on --symbols all --colors full --size %pwx%ph 2>/dev/null
 fileviewer {*.docx,*.rtf,*.odt} pandoc --to plain --columns %pw %c 2>/dev/null
 fileviewer {*.htm,*.html},<text/html> elinks -localhost 1 -force-html -dump 1 -dump-width %pw %c 2>/dev/null
 fileviewer {*.cbz,*.cbr,*.cb7}
          \ bsdtar --fast-read --to-stdout --extract --file %c '*.jpg' 2>/dev/null |
-         \ chafa --polite on --preprocess on --symbols all --colors full --size %pwx%ph 2>/dev/null
+         \ chafa --format symbols --polite on --preprocess on --symbols all --colors full --size %pwx%ph 2>/dev/null
 
 " Archives
 " view contents of archive files on opening them
@@ -148,7 +148,7 @@ filetype {*.iso}
 
 " Images
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg},<image/*>
-         \ chafa --polite on --preprocess on --symbols all --colors full --size %pwx%ph %c 2>/dev/null
+         \ chafa --format symbols  --polite on --preprocess on --symbols all --colors full --size %pwx%ph %c 2>/dev/null
 
 " Audio
 fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.og[agx],*.opus,*.aac},<audio/*>
@@ -157,7 +157,7 @@ fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.og[agx],*.opus,*.aac},<audio/*>
 " Video
 fileviewer {*.avi,*.mp4,*.ogv,*.mkv,*.mpeg,*.webm,*.m4v,},<video/*>
          \ ffmpeg -i %c -f gif -frames:v 1 - 2>/dev/null |
-         \ chafa --polite on --preprocess on --symbols all --colors full --size %pwx%ph 2>/dev/null
+         \ chafa --format symbols --polite on --preprocess on --symbols all --colors full --size %pwx%ph 2>/dev/null
 
 " Code & Data
 fileviewer {*.json},<text/*>

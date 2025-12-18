@@ -30,6 +30,7 @@ depends=(
     btop
     elinks
     emacs
+    foot
     impala
     khal
     ncmpcpp
