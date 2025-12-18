@@ -81,6 +81,7 @@ function main() {
 		target="$(source-path-to-home-path "$sourcedir" "$source")"
 		if ! test -e "$target"; then
 			printf "Copying missing source file into '%s'\n" "$target"
+            mkdir --parents "$(dirname "$target")"
 			cp --force "$source" "$target"
 		elif file-has-diff "$target" "$source"; then
 			if test -n "$diff"; then
