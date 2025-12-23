@@ -39,6 +39,13 @@ Server = https://git.deuill.org/api/packages/deuill/arch/core/$arch
 
 Running `pacman -Sy` should pull repository files correctly.
 
+## Keeping Updated
+
+Having added the custom repository, any package installed here will be kept updated in future calls
+to `pacman --sync --upgrade`. However, certain packages will also install user configuration in
+`/etc/skel`, to be copied over to user home directories when users are created; the included
+`skel-merge` utility helps copy files over, allowing for local modifications.
+
 ## License
 
 All code in this repository is covered by the terms of the MIT License, the full text of which can be found in the LICENSE file.
