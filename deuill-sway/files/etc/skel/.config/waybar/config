@@ -26,7 +26,7 @@
 			"critical": 15
 		},
 		"format": "<span color='#585858' size='smaller'>bat</span> {capacity}%",
-		"on-click": "sensible-terminal --class floating -T 'Battery Information' -e battop",
+		"on-click": "foot --app-id floating --title 'Battery Information' -e battop",
 		"max-length": 25
 	},
 	"bluetooth": {
@@ -38,12 +38,12 @@
 		"tooltip-format-connected": "Controller:  {controller_alias} ({controller_address})\nConnections: {num_connections}{device_enumerate}",
 		"tooltip-format-enumerate-connected": "\n\nDevice: {device_alias} ({device_address})",
 		"tooltip-format-enumerate-connected-battery": "\n\nDevice:  {device_alias} ({device_address})\nBattery: {device_battery_percentage}%",
-		"on-click": "sensible-terminal --class floating -T 'Bluetooth Devices' -e bluetui"
+		"on-click": "foot --app-id floating --title 'Bluetooth Devices' -e bluetui"
 	},
 	"clock": {
 		"format": "<span color='#585858' size='smaller'>time</span> {:%H:%M}",
 		"format-alt": "<span color='#585858' size='smaller'>date</span> {:%A, %d %B %H:%M %Z}",
-		"on-click-right": "sensible-terminal -T 'Calendar' -e ikhal",
+		"on-click-right": "foot --title 'Calendar' -e ikhal",
 		"calendar": {
 			"mode": "year",
 			"mode-mon-col": 3,
@@ -71,7 +71,7 @@
 	"cpu": {
 		"interval": 10,
 		"format": "<span color='#585858' size='smaller'>cpu</span> {usage}%",
-		"on-click": "sensible-terminal -T 'System Monitor' -e btop"
+		"on-click": "foot -T 'System Monitor' -e btop"
 	},
 	"custom/mpris": {
 		"format": "{} <span color='#585858' size='smaller'>{icon}</span>",
@@ -105,14 +105,14 @@
 		"tooltip-format-disconnected": "MPD (Disconnected)",
 		"smooth-scrolling-threshold": 20,
 		"on-click": "mpc toggle",
-		"on-click-right": "sensible-terminal -T 'NCMPCpp' -e ncmpcpp",
+		"on-click-right": "foot -T 'NCMPCpp' -e ncmpcpp",
 		"on-scroll-up": "mpc prev",
 		"on-scroll-down": "mpc next"
 	},
 	"memory": {
 		"interval": 30,
 		"format": "<span color='#585858' size='smaller'>mem</span> {}%",
-		"on-click": "sensible-terminal -T 'System Monitor' -e btop"
+		"on-click": "foot -T 'System Monitor' -e btop"
 	},
 	"network": {
 		"format": "<span color='#585858' size='smaller'>net</span> {ifname}",
@@ -121,7 +121,7 @@
 		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
 		"tooltip-format-ethernet": "{ifname}",
 		"tooltip-format-disconnected": "Disconnected",
-		"on-click": "sensible-terminal --class floating -T 'Network Devices' -e impala",
+		"on-click": "foot --app-id floating --title 'Network Devices' -e impala",
 		"max-length": 50
 	},
 	"wireplumber": {
@@ -129,7 +129,7 @@
 		"format-muted": "<span color='#585858' size='smaller'>vol</span> <span color='#ab4642'>{volume}%</span>",
 		"tooltip-format": "{node_name}",
 		"scroll-step": 1,
-		"on-click": "sensible-terminal --class floating -T 'Audio Devices' -e wiremix"
+		"on-click": "foot --app-id floating --title 'Audio Devices' -e wiremix"
 	},
 	"sway/language": {
 		"format": "<span color='#585858' size='smaller'>key</span> {}",
