@@ -1,4 +1,4 @@
-# Maintainer: Alex Palaistras <alex+archlinux@deuill.org>
+# Maintainer: Marid de Uill <code@deuill.org>
 pkgname=deuill-sway
 pkgver=1.0.22
 pkgrel=1
