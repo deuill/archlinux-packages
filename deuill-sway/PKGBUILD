@@ -48,11 +48,11 @@ depends=(
     dunst
     gammastep
     mpd
+    pimsync
     pipewire-jack
     pipewire
     pipewire-alsa
     pipewire-pulse
-    vdirsyncer
     wireplumber
 
     # Secondary utilities and dependencies.

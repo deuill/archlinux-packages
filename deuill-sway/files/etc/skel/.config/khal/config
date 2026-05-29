@@ -1,11 +1,11 @@
 [calendars]
 
 [[calendar_local]]
-path = ~/.local/share/vdirsyncer/calendars/*
+path = ~/.local/share/pimsync/calendars/*
 type = discover
 
 [[contacts_local]]
-path = ~/.local/share/vdirsyncer/contacts/*
+path = ~/.local/share/pimsync/contacts/*
 type = discover
 
 [locale]
