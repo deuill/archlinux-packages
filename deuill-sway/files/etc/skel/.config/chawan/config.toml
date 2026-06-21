@@ -5,24 +5,26 @@ visual-home = "cgi-bin:chabookmark?action=view"
 [buffer]
 # Enable image display by default.
 images = true
+
 # Enable cookie storage for all sites.
 cookie = true
 
 [external]
 # Default path for downloads.
 download-dir = "~/Downloads"
+
 # Copy-paste for Wayland.
 copy-cmd  = "wl-copy"
 paste-cmd = "wl-paste"
 
 # Keybindings.
 [page]
-"o" = "loadCursor"
-"O" = "load"
-"J" = "prevBuffer"
-"K" = "nextBuffer"
+"o"   = "loadCursor"
+"O"   = "load"
+"C-o" = "prevBuffer"
+"C-i" = "nextBuffer"
 
 [line]
 "C-j" = "line.prevHist"
 "C-k" = "line.nextHist"
-"C-g" = "line.cancel"
+"Esc" = "line.cancel"
