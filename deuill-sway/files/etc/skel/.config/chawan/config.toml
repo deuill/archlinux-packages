@@ -23,8 +23,20 @@ paste-cmd = "wl-paste"
 "O"   = "load"
 "C-o" = "prevBuffer"
 "C-i" = "nextBuffer"
+'C-k' = '() => pager.load("kagi:")'
 
 [line]
 "C-j" = "line.prevHist"
 "C-k" = "line.nextHist"
 "Esc" = "line.cancel"
+
+# Search with Kagi.
+[[omnirule]]
+match          = "^kagi:"
+substitute-url = '(x) => "https://kagi.com/html/search?q=" + encodeURIComponent(x.slice(x.indexOf(":") + 1))'
+
+# Site configuration.
+[[siteconf]]
+host   = '(www\.)?kagi\.com'
+cookie = "save"
+
