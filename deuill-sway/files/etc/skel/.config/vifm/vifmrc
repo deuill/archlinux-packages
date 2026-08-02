@@ -127,17 +127,24 @@ fileviewer ../ tree %c -C -L 1
 
 " Documents
 fileviewer {*.pdf,*.epub},<application/pdf>
-          \ mutool draw -P -i -q  -F png -o - %c 1 2>/dev/null |
-          \ chafa --polite on --preprocess on --align center --view-size %pwx%ph %pd 2>/dev/null
-fileviewer {*.docx,*.rtf,*.odt} pandoc --to ansi --columns %pw %c 2>/dev/null
-fileviewer {*.htm,*.html},<text/html> cha --type text/html --dump -o 'display.columns=%pw' -o 'display.force-columns=true' %c 2>/dev/null
+         \ timeout 5s
+         \ mutool draw -P -i -q  -F png -o - %c 1 2>/dev/null |
+         \ chafa --polite on --preprocess on %pd 2>/dev/null
+fileviewer {*.docx,*.rtf,*.odt,*.xls,*.xlsx}
+         \ timeout 5s
+         \ pandoc --to ansi --columns %pw %c 2>/dev/null
+fileviewer {*.htm,*.html},<text/html>
+         \ timeout 5s
+         \ cha --type text/html --dump -o 'display.columns=%pw' -o 'display.force-columns=true' %c 2>/dev/null
 fileviewer {*.cbz,*.cbr,*.cb7}
+         \ timeout 5s
          \ bsdtar --fast-read --to-stdout --extract --file %c '*.jpg' 2>/dev/null |
-         \ chafa --polite on --preprocess on --align center --view-size %pwx%ph %pd 2>/dev/null
+         \ chafa --polite on --preprocess on %pd 2>/dev/null
 
 " Archives
 " view contents of archive files on opening them
 fileviewer {*.7z,*.bz2,*.cab,*.cpio,*.deb,*.gz,*.msi,*.pkg,*.rar,*.tar,*.tgz,*.xz,*.zst,*.zip},<archive/*>
+         \ timeout 5s
          \ bsdtar --list --file %c 2>/dev/null | tree -C --fromfile /dev/stdin | tail --lines +2
 filetype {*.7z,*.bz2,*.cab,*.cpio,*.deb,*.gz,*.msi,*.pkg,*.rar,*.tar,*.tgz,*.xz,*.zst,*.zip},<archive/*>
        \ {Mount with FUSE}
@@ -148,19 +155,23 @@ filetype {*.iso}
 
 " Images
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.svg},<image/*>
-         \ chafa --polite on --preprocess on --align center --view-size %pwx%ph %c %pd 2>/dev/null
+         \ timeout 5s
+         \ chafa --polite on --preprocess on %c %pd 2>/dev/null
 
 " Audio
 fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.og[agx],*.opus,*.aac},<audio/*>
+         \ timeout 5s
          \ exiftool -groupHeadings --ExifTool:all --File:all %c 2>/dev/null
 
 " Video
 fileviewer {*.avi,*.mp4,*.ogv,*.mkv,*.mpeg,*.webm,*.m4v,},<video/*>
+         \ timeout 5s
          \ ffmpeg -i %c -f gif -ss 5s -frames:v 1 - 2>/dev/null |
-         \ chafa --polite on --preprocess on --align center --view-size %pwx%ph %pd 2>/dev/null
+         \ chafa --polite on --preprocess on %pd 2>/dev/null
 
 " Code & Data
 fileviewer {*.json},<text/*>
+         \ timeout 5s
          \ highlight --out-format truecolor --style base16/default-dark %c
 filetype {*.json},<text/*>
          \ emacs --no-window-system %c 2>/dev/null
@@ -169,7 +180,9 @@ filetype {*.json},<text/*>
 filetype {*.o},<application/x-object> nm %f | less
 
 " Man page
-fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
+fileviewer {*.[1-8]},<text/troff>
+         \ timeout 5s
+         \ man ./%c | col -b
 
 " MD5
 filetype *.md5
@@ -198,6 +211,7 @@ filetype {*.asc},<application/pgp-signature>
 
 " Binary file hexadecimal view.
 fileviewer <application/octet-stream>,<application/x-executable>
+         \ timeout 5s
          \ hexdump --canonical --color=always %c | head --lines 100
 
 " Open all other files with default system programs.
