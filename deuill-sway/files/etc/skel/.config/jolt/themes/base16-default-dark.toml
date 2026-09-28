@@ -1,0 +1,18 @@
+# Jolt theme based on Base16-Default-Dark.
+name = "base16-default-dark"
+
+[dark]
+bg               = "#2d2d2d"
+dialog_bg        = "#383838"
+fg               = "#f8f8f8"
+accent           = "#7cafc2"
+accent_secondary = "#ba8baf"
+highlight        = "#7cafc2"
+muted            = "#b8b8b8"
+success          = "#a1b56c"
+warning          = "#f7ca88"
+danger           = "#ab4642"
+border           = "#585858"
+selection_bg     = "#f7ca88"
+selection_fg     = "#181818"
+graph_line       = "#7cafc2"

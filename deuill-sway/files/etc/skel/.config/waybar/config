@@ -26,7 +26,7 @@
 			"critical": 15
 		},
 		"format": "<span color='#585858' size='smaller'>bat</span> {capacity}%",
-		"on-click": "foot --app-id floating --title 'Battery Information' -e battop",
+		"on-click": "foot --app-id floating --title 'Battery Information' -e jolt",
 		"max-length": 25
 	},
 	"bluetooth": {

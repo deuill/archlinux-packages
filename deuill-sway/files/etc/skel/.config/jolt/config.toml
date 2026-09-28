@@ -1,0 +1,5 @@
+# General settings.
+theme = "base16-default-dark"
+
+[history]
+background_recording = true
