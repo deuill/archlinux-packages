@@ -10,13 +10,13 @@ external_editor              = "nano"
 header_visibility   = "yes"
 header_window_color = "default"
 volume_color        = "green"
-state_line_color    = "cyan"
+state_line_color    = "blue"
 
 [playlist]
 playlist_display_mode    = "columns"
 titles_visibility        = "no"
 song_list_format         = "$5%t$9 $R$6%a$9 $3%N$9"
-song_columns_list_format = "(3f)[green]{NE} (8f)[cyan]{lr} (50)[]{t|f:Title} (20)[magenta]{ar} (20)[yellow]{br} (4f)[green]{y}"
+song_columns_list_format = "(3f)[green]{NE} (8f)[blue]{lr} (50)[]{t|f:Title} (20)[magenta]{ar} (20)[yellow]{br} (4f)[green]{y}"
 now_playing_prefix       = "$b$r"
 now_playing_suffix       = "$/r$/b"
 
@@ -24,13 +24,13 @@ now_playing_suffix       = "$/r$/b"
 progressbar_look          = "━🞆 "
 progressbar_color         = "white"
 statusbar_visibility      = "yes"
-progressbar_elapsed_color = "cyan"
+progressbar_elapsed_color = "blue"
 statusbar_color           = "3"
 song_status_format        = "{%t - %a}"
 
 [library]
 song_library_format = "{{%a - %t}|{%f}}{$R%l}"
-empty_tag_color     = "cyan"
+empty_tag_color     = "blue"
 
 [visualizer]
 visualizer_data_source = "~/.cache/mpd/mpd.fifo"

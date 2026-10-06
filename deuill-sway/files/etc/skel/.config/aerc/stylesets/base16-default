@@ -4,9 +4,8 @@
 
 *.default = true
 *.normal = true
-
-*.selected.reverse = true
 *.bg = "#2d2d2d"
+*.fg = "#d8d8d8"
 
 title.bold = true
 header.italic = true
@@ -16,40 +15,40 @@ error.fg = "#ab4642"
 warning.fg = "#dc9656"
 success.fg = "#a1b56c"
 
-statusline_default.reverse = false
-statusline*.bg = "#282828"
-statusline_default.fg = "#b8b8b8"
+statusline.bg = "#383838"
 statusline_error.fg = "#ab4642"
-statusline_error.reverse = true
 
-msglist_unread.bold = true
+msglist.selected.bg = "#585858"
+msglist.selected.fg = "#d8d8d8"
+msglist.selected.bold = true
 msglist_unread.fg = "#e8e8e8"
-msglist_deleted.fg = "#585858"
-msglist_marked.bg = "#383838"
+msglist_unread.bold = true
+msglist_deleted.fg = "#ab4642"
+msglist_marked.fg = "#ba8baf"
 msglist_flagged.fg = "#f7ca88"
 
-dirlist*.fg = "#b8b8b8"
-dirlist_unread.fg = "#d8d8d8"
-dirlist*.bg = "#2d2d2d"
-dirlist*.selected.bg = "#383838"
-dirlist*.selected.fg = "#d8d8d8"
-dirlist*.selected.bold = true
+dirlist.bg = "#2d2d2d"
+dirlist.fg = "#7cafc2"
+dirlist.selected.bg = "#585858"
+dirlist.selected.fg = "#d8d8d8"
+dirlist.selected.bold = true
+dirlist_unread.bold = true
 dirlist_recent.italic = true
 
-completion*.selected.reverse = true
-completion*.selected.bold = true
-completion*.bg = "#282828"
-completion*.fg = "#d8d8d8"
+completion.bg = "#383838"
+completion.selected.bg = "#585858"
+completion.selected.bold = true
 
-tab.bg = "#282828"
-tab.fg = "#d8d8d8"
-tab.selected.bg = "#282828"
-tab.selected.fg = "#d8d8d8"
+tab.bg = "#383838"
+tab.selected.fg = "#a1b56c"
 tab.selected.bold = true
 
+part_*.bg = "#383838"
+part_*.selected.bg = "#585858"
+part_*.selected.bold = true
+
 border.bg = "#2d2d2d"
-border.fg = "#282828"
+border.fg = "#2d2d2d"
 spinner.fg = "#585858"
 
-selector_focused.reverse = true
 selector_chooser.bold = true
