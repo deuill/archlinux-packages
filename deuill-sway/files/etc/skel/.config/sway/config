@@ -245,8 +245,8 @@ bindsym --to-code {
 # Default font.
 font Iosevka 9
 
-# Wallpaper.
-output * bg ~/.config/sway/default-bg fill
+# Solid color background by default.
+output * bg #282828 solid_color
 
 # Borders and gaps.
 default_border          pixel 2
