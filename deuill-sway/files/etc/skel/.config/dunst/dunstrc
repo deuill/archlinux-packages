@@ -24,16 +24,16 @@ horizontal_padding = 10 # Horizontal padding.
 text_icon_padding  = 0  # Padding between text and icon.
 
 frame_width     = 2         # Width in pixels of frame around the notification window.
-frame_color     = "#d8d8d8" # Defines color of the frame around the notification window.
+frame_color     = "#a9a5a0" # Defines color of the frame around the notification window.
 separator_color = auto      # Color for the separator.
-corner_radius = 0           # The corner radius for the notification window.
+corner_radius   = 2         # The corner radius for the notification window.
 
 sort           = yes # Sort messages by urgency.
 idle_threshold = 120 # Don't remove messages, if the user is idle # for longer than idle_threshold seconds.
 
 # Text settings.
-font = Iosevka 10 # The font name and size.
-line_height = 1   # The spacing between lines.
+font        = Terminus 10 # The font name and size.
+line_height = 1           # The spacing between lines.
 
 markup = full            # Pango markup in notifications. Choice of 'full', 'strip', and 'no'.
 format = "<b>%s</b>\n%b" # Message format.
@@ -70,19 +70,19 @@ dmenu = /usr/bin/rofi -dmenu # Path to dmenu-compatible launcher.
 
 # Notification-specific settings.
 [urgency_low]
-highlight  = "#d8d8d8"
-foreground = "#d8d8d8"
-background = "#282828"
+highlight  = "#e0dcd7"
+foreground = "#e0dcd7"
+background = "#0a0b08"
 timeout = 10
 
 [urgency_normal]
-highlight  = "#d8d8d8"
-foreground = "#d8d8d8"
-background = "#282828"
+highlight  = "#e0dcd7"
+foreground = "#e0dcd7"
+background = "#0a0b08"
 timeout = 10
 
 [urgency_critical]
-highlight  = "#d8d8d8"
-foreground = "#ab4642"
-background = "#282828"
+highlight  = "#e0dcd7"
+foreground = "#ab4649"
+background = "#0a0b08"
 timeout = 10

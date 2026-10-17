@@ -1,6 +1,6 @@
 * {
-    background:        #282828;
-    foreground:        #e8e8e8;
+    background:        #0a0b08;
+    foreground:        #e0dcd7;
     normal-background: var(background);
     normal-foreground: var(foreground);
     active-background: var(background);
@@ -15,21 +15,20 @@
     alternate-urgent-background: var(active-background);
     alternate-urgent-foreground: var(urgent-foreground);
 
-    selected-normal-background: #ab4642;
-    selected-normal-foreground: var(background);
+    selected-normal-background: #ab4649;
+    selected-normal-foreground: var(foreground);
     selected-active-background: var(selected-normal-background);
-    selected-active-foreground: var(background);
+    selected-active-foreground: var(selected-normal-foreground);
     selected-urgent-background: var(selected-normal-background);
-    selected-urgent-foreground: var(background);
+    selected-urgent-foreground: var(selected-normal-foreground);
 
     background-color: rgba(0, 0, 0, 0%);
     border-color:     var(background);
     separatorcolor:   var(foreground);
 
-    lightbg: #f7ca88;
-    lightfg: #86c1b9;
-    blue:    #7cafc2;
-    red:     #ab4642;
+    lightbg: #706c68;
+    lightfg: #f7f3ef;
+    red:     #ab4649;
 
     spacing: 2;
 }
@@ -37,8 +36,7 @@
 element {
     border-radius: 0;
     border:        0;
-    padding:       10px 12px;
-    spacing:       5px;
+    padding:       5px;
 }
 
 element normal.normal {
@@ -87,27 +85,24 @@ element alternate.active {
 }
 
 element-text {
-    background-color: rgba(0, 0, 0, 0%);
+    background-color: none;
     highlight:        inherit;
     text-color:       inherit;
 }
 
 element-icon {
-    background-color: rgba(0, 0, 0, 0%);
-    padding:          0 15px 0 0;
+    background-color: none;
+    padding:          0 5px 0 0;
     size:             1em;
     text-color:       inherit;
 }
 
 window {
     background-color: var(background);
-    border-color:     #585858;
-    border-radius:    0;
-    border:           2px;
+    border:           0;
     location:         north;
-    padding:          10px;
-    y-offset:         5%;
-    width:            40%;
+    width:            100%;
+    y-offset:         -25px;
 }
 
 mainbox {
@@ -115,8 +110,14 @@ mainbox {
     border:  0;
 }
 
+@media (enabled: env(ROFI_HORIZONTAL, false)) {
+    mainbox {
+        orientation: horizontal;
+    }
+}
+
 message {
-    padding:      10px;
+    padding:      5px;
     border-color: var(separatorcolor);
     border:       0px;
 }
@@ -126,21 +127,28 @@ textbox {
 }
 
 listview {
-    border-color: var(separatorcolor);
-    border:       0px;
+    border:       0;
     fixed-height: false;
+    dynamic:      true;
+    layout:       vertical;
     lines:        10;
-    padding:      2px 0px 0px;
-    scrollbar:    true;
-    spacing:      0px;
+    padding:      0;
+    scrollbar:    false;
+    spacing:      5;
+}
+
+@media (enabled: env(ROFI_HORIZONTAL, false)) {
+    listview {
+        layout: horizontal;
+    }
 }
 
 scrollbar {
-    width:        4px;
-    padding:      0 0 0 8px;
-    handle-width: 8px;
+    width:        5px;
+    padding:      0 0 0 5px;
+    handle-width: 5px;
     border:       0;
-    handle-color: #585858;
+    handle-color: #ab4649;
 }
 
 sidebar {
@@ -160,25 +168,32 @@ button selected {
 
 num-filtered-rows {
     expand:     false;
-    text-color: #585858;
+    text-color: var(lightbg);
 }
 
 num-rows {
     expand:     false;
-    text-color: #585858;
+    text-color: var(lightbg);
 }
 
 textbox-num-sep {
     expand:     false;
     str:        "/";
-    text-color: #585858;
+    text-color: var(lightbg);
 }
 
 inputbar {
     children:   [entry, num-filtered-rows, textbox-num-sep, num-rows, case-indicator];
-    padding:    10px;
-    spacing:    0px;
+    padding:    3px 7px;
+    spacing:    0;
     text-color: var(normal-foreground);
+    width:      15%;
+}
+
+@media (enabled: env(ROFI_HORIZONTAL, false)) {
+    inputbar {
+        children:   [entry, case-indicator];
+    }
 }
 
 case-indicator {
@@ -187,9 +202,9 @@ case-indicator {
 }
 
 entry {
-    padding: 5px;
-    placeholder-color: #585858;
-    placeholder: "Type to filter or search...";
+    padding: 0;
+    placeholder-color: var(lightbg);
+    placeholder: "Type to search…";
     spacing: 0;
     text-color: var(normal-foreground);
 }

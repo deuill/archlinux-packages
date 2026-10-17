@@ -46,6 +46,17 @@ to `pacman --sync --upgrade`. However, certain packages will also install user c
 `/etc/skel`, to be copied over to user home directories when users are created; the included
 `skel-merge` utility helps copy files over, allowing for local modifications.
 
+It is also possible to keep files in `$HOME` synchronized directly for changes to this repository
+with the use of [GNU Stow](https://www.gnu.org/software/stow/), e.g.:
+
+```sh
+# Assuming the `archlinux-packages` repository has been cloned in `~/Projects/archlinux-packages`.
+stow --dir ~/Projects/archlinux-packages/deuill-sway/files/etc/skel --target $HOME/.config --adopt --verbose --restow .config
+```
+
+The advantage to this is the ability to keep track of local changes in-repo; the disadvantage being
+that reconciling against upstream can be additional work.
+
 ## License
 
 All code in this repository is covered by the terms of the MIT License, the full text of which can be found in the LICENSE file.

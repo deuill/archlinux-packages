@@ -1,0 +1,50 @@
+#
+# Base16 style-set for Aerc.
+#
+
+*.default = true
+*.normal = true
+*.bg = "#e0dcd7"
+*.fg = "#1d1b19"
+
+*.selected.bg = "#ab4649"
+*.selected.fg = "#f7f3ef"
+*.selected.bold = true
+
+title.bold = true
+header.italic = true
+
+*error.bold = true
+error.fg = "#ab4649"
+warning.fg = "#4e4b47"
+success.fg = "#0a0b08"
+
+statusline.bg = "#1d1b19"
+statusline.fg = "#e0dcd7"
+statusline_error.fg = "#ab4649"
+
+msglist_unread.fg = "#0a0b08"
+msglist_marked.fg = "#ab4649"
+msglist_unread.bold = true
+msglist_deleted.dim = true
+msglist_flagged.underline = true
+
+dirlist.fg = "#0a0b08"
+dirlist_unread.bold = true
+dirlist_recent.italic = true
+
+completion.bg = "#1d1b19"
+completion.fg = "#e0dcd7"
+
+border.bg = "#e0dcd7"
+border.fg = "#1d1b19"
+
+tab.bg = "#1d1b19"
+tab.fg = "#c4c0bb"
+tab.selected.bg = "#1d1b19"
+tab.selected.bold = true
+
+part_*.bg = "#1d1b19"
+part_*.fg = "#c4c0bb"
+
+selector_chooser.bold = true

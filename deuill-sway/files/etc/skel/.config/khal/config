@@ -9,11 +9,48 @@ path = ~/.local/share/pimsync/contacts/*
 type = discover
 
 [locale]
-timeformat = %H:%M
-dateformat = %d/%m/%Y
-longdateformat = %d/%m/%Y
-datetimeformat = %d/%m/%Y %H:%M
+timeformat =         %H:%M
+dateformat =         %d/%m/%Y
+longdateformat =     %d/%m/%Y
+datetimeformat =     %d/%m/%Y %H:%M
 longdatetimeformat = %d/%m/%Y %H:%M
 
 [view]
-frame = color
+theme = light
+
+[palette]
+"header"               = "black", "white"
+"footer"               = "black", "white"
+"line header"          = "black", "white", "bold"
+"alt header"           = "black", "", "bold"
+"bright"               = "dark blue", "white", "bold,standout"
+"list"                 = "black", "white"
+"list focused"         = "white", "light blue", "bold"
+"edit"                 = "black", "white"
+"edit focus"           = "white", "light blue", "bold"
+"button"               = "black", "dark cyan"
+"button focused"       = "white", "light blue", "bold"
+"reveal focus"         = "black", "dark cyan", "standout"
+"today focus"          = "white", "dark cyan", "standout"
+"today"                = "black", "light gray"
+"date header"          = "", "white"
+"date header focused"  = "white", "dark gray", "bold,standout"
+"date header selected" = "dark gray", "light cyan"
+"dayname"              = "dark gray", "white"
+"monthname"            = "dark gray", "white"
+"weeknumber_right"     = "dark gray", "white"
+"alert"                = "white", "dark red"
+"mark"                 = "white", "dark green"
+"frame"                = "dark gray", "white"
+"frame focus"          = "light red", "white"
+"frame focus color"    = "dark blue", "white"
+"frame focus top"      = "dark magenta", "white"
+"eventcolumn"          = "", "", ""
+"eventcolumn focus"    = "", "", ""
+"calendar"             = "", "", ""
+"calendar focus"       = "", "", ""
+"editbx"               = "light gray", "dark blue"
+"editcp"               = "black", "light gray", "standout"
+"popupbg"              = "white", "black", "bold"
+"popupper"             = "black", "light gray"
+"caption"              = "black", "", ""

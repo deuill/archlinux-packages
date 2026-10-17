@@ -1,6 +1,5 @@
-{
+    {
 	"layer": "top",
-	"height": 28,
 	"modules-left": [
 		"sway/window",
 		"mpd",
@@ -25,15 +24,15 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "<span color='#585858' size='smaller'>bat</span> {capacity}%",
+		"format": "<span color='#706c68' size='smaller'>bat</span> {capacity}%",
 		"on-click": "foot --app-id floating --title 'Battery Information' -e jolt",
 		"max-length": 25
 	},
 	"bluetooth": {
 		"format-off": "",
-		"format-on": "<span color='#585858' size='smaller'>bt</span> ⋯",
-		"format-connected": "<span color='#585858' size='smaller'>bt</span> {device_alias}",
-		"format-connected-battery": "<span color='#585858' size='smaller'>bt</span> {device_alias} {device_battery_percentage}%",
+		"format-on": "<span color='#706c68' size='smaller'>bt</span> ⋯",
+		"format-connected": "<span color='#706c68' size='smaller'>bt</span> {device_alias}",
+		"format-connected-battery": "<span color='#706c68' size='smaller'>bt</span> {device_alias} {device_battery_percentage}%",
 		"tooltip-format": "Controller:  {controller_alias} ({controller_address})\nConnections: {num_connections}",
 		"tooltip-format-connected": "Controller:  {controller_alias} ({controller_address})\nConnections: {num_connections}{device_enumerate}",
 		"tooltip-format-enumerate-connected": "\n\nDevice: {device_alias} ({device_address})",
@@ -41,18 +40,18 @@
 		"on-click": "foot --app-id floating --title 'Bluetooth Devices' -e bluetui"
 	},
 	"clock": {
-		"format": "<span color='#585858' size='smaller'>time</span> {:%H:%M}",
-		"format-alt": "<span color='#585858' size='smaller'>date</span> {:%A, %d %B %H:%M %Z}",
+		"format": "<span color='#706c68' size='smaller'>time</span> {:%H:%M}",
+		"format-alt": "<span color='#706c68' size='smaller'>date</span> {:%A, %d %B %H:%M %Z}",
 		"on-click-right": "foot --title 'Calendar' -e ikhal",
 		"calendar": {
 			"mode": "year",
 			"mode-mon-col": 3,
 			"on-scroll": 1,
 			"format": {
-				"months": "<span color='#d8d8d8'><b>{}</b></span>",
-				"days": "<span color='#f7ca88'>{}</span>",
-				"weekdays": "<span color='#86c1b9'><b>{}</b></span>",
-				"today": "<span color='#ab4642'><b>{}</b></span>"
+				"months": "<span color='#e0dcd7'><b>{}</b></span>",
+				"days": "<span color='#f7f3ef'>{}</span>",
+				"weekdays": "<span color='#a9a5a0'><b>{}</b></span>",
+				"today": "<span color='#ab4649'><b>{}</b></span>"
 			}
 		},
 		"actions": {
@@ -61,7 +60,7 @@
 			"on-scroll-down": "shift_down"
 		},
 		"tooltip-format": "<tt><small>{calendar}</small></tt>",
-		"today-format": "<span color='#ab4642'>{}</span>",
+		"today-format": "<span color='#ab4649'>{}</span>",
 		"timezones": [
 			"",
 			"America/Los_Angeles"
@@ -70,11 +69,11 @@
 	},
 	"cpu": {
 		"interval": 10,
-		"format": "<span color='#585858' size='smaller'>cpu</span> {usage}%",
+		"format": "<span color='#706c68' size='smaller'>cpu</span> {usage}%",
 		"on-click": "foot -T 'System Monitor' -e btop"
 	},
 	"custom/mpris": {
-		"format": "{} <span color='#585858' size='smaller'>{icon}</span>",
+		"format": "{} <span color='#706c68' size='smaller'>{icon}</span>",
 		"return-type": "json",
 		"format-icons": {
 			"playing": "play",
@@ -90,7 +89,7 @@
 		"on-scroll-down": "playerctl next"
 	},
 	"mpd": {
-		"format": "{artist}<span color='#585858'> · </span>{title} <span color='#585858' size='smaller'>{stateIcon}</span>",
+		"format": "{artist}<span color='#706c68'> · </span>{title} <span color='#706c68' size='smaller'>{stateIcon}</span>",
 		"format-stopped": "",
 		"format-disconnected": "",
 		"interval": 5,
@@ -111,13 +110,13 @@
 	},
 	"memory": {
 		"interval": 30,
-		"format": "<span color='#585858' size='smaller'>mem</span> {}%",
+		"format": "<span color='#706c68' size='smaller'>mem</span> {}%",
 		"on-click": "foot -T 'System Monitor' -e btop"
 	},
 	"network": {
-		"format": "<span color='#585858' size='smaller'>net</span> {ifname}",
-		"format-wifi": "<span color='#585858' size='smaller'>wifi</span> {essid}",
-		"format-disconnected": "<span color='#585858' size='smaller'>net</span> ⋯",
+		"format": "<span color='#706c68' size='smaller'>net</span> {ifname}",
+		"format-wifi": "<span color='#706c68' size='smaller'>wifi</span> {essid}",
+		"format-disconnected": "<span color='#706c68' size='smaller'>net</span> ⋯",
 		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
 		"tooltip-format-ethernet": "{ifname}",
 		"tooltip-format-disconnected": "Disconnected",
@@ -125,14 +124,14 @@
 		"max-length": 50
 	},
 	"wireplumber": {
-		"format": "<span color='#585858' size='smaller'>vol</span> {volume}%",
-		"format-muted": "<span color='#585858' size='smaller'>vol</span> <span color='#ab4642'>{volume}%</span>",
+		"format": "<span color='#706c68' size='smaller'>vol</span> {volume}%",
+		"format-muted": "<span color='#706c68' size='smaller'>vol</span> <span color='#ab4649'>{volume}%</span>",
 		"tooltip-format": "{node_name}",
 		"scroll-step": 1,
 		"on-click": "foot --app-id floating --title 'Audio Devices' -e wiremix"
 	},
 	"sway/language": {
-		"format": "<span color='#585858' size='smaller'>key</span> {}",
+		"format": "<span color='#706c68' size='smaller'>key</span> {}",
 		"max-length": 50,
 		"tooltip": false,
 		"on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
@@ -151,14 +150,14 @@
 	},
 	"sway/window": {
 		"align": 0,
-		"format": "<span color='#585858'>⋮</span>",
+		"format": "<span color='#706c68'>⋮</span>",
 		"icon": false,
 		"max-length": 50,
 		"on-click": "rofi -show drun -show-icons"
     },
 	"temperature": {
 		"thermal-zone": 1,
-		"format": "<span color='#585858' size='smaller'>temp</span> {temperatureC}°C",
+		"format": "<span color='#706c68' size='smaller'>temp</span> {temperatureC}°C",
 		"tooltip": false
 	},
 	"tray": {

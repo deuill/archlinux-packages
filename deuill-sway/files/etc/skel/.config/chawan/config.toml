@@ -9,6 +9,10 @@ images = true
 # Enable cookie storage for all sites.
 cookie = true
 
+[display]
+# Improve contrast.
+minimum-contrast = 25
+
 [external]
 # Default path for downloads.
 download-dir = "~/Downloads"
@@ -40,3 +44,7 @@ substitute-url = '(x) => "https://kagi.com/html/search?q=" + encodeURIComponent(
 host   = '(www\.)?kagi\.com'
 cookie = "save"
 
+[[siteconf]]
+host      = '(www\.)?codeberg\.org'
+cookie    = "save"
+scripting = true
