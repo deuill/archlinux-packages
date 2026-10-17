@@ -63,7 +63,7 @@ input {
 
 seat * {
     # Set cursor theme for all seats.
-    xcursor_theme capitaine-cursors 24
+    xcursor_theme Adwaita 24
 
     # Hide cursor after 30 seconds of inactivity.
     hide_cursor 30000
@@ -88,7 +88,7 @@ for_window {
 
 # Allow for specified floating windows.
 for_window {
-    [app_id="floating"] floating enable; border pixel 2
+    [app_id="floating"] floating enable; border normal 2
 }
 
 # -----------
@@ -104,9 +104,9 @@ floating_modifier $mod
 bindsym --to-code {
     # Application launching
     $mod+Return    exec $terminal
-    XF86LaunchA    exec $launcher -show drun -show-icons
-    $mod+d         exec $launcher -show drun -show-icons
-    $mod+Shift+d   exec $launcher -show run
+    XF86LaunchA    exec ROFI_HORIZONTAL=true $launcher -show drun
+    $mod+d         exec ROFI_HORIZONTAL=true $launcher -show drun
+    $mod+Shift+d   exec ROFI_HORIZONTAL=true $launcher -show run
     $mod+o         exec $launcher -show filebrowser -show-icons
     $mod+Shift+o   exec $launcher -show recursivebrowser -show-icons
     XF86Explorer   exec $launcher -show filebrowser -show-icons
@@ -156,11 +156,11 @@ bindsym --to-code {
     $mod+e layout toggle split
 
     # Toggle tiling/floating
-    $mod+t       floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border pixel 2
+    $mod+t       floating toggle; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal 2
     $mod+Shift+t sticky toggle
 
     # Move to and show scratchpad.
-    $mod+minus        scratchpad show; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border pixel 2
+    $mod+minus        scratchpad show; [tiling con_id=__focused__] border none; [floating con_id=__focused__] border normal 2
     $mod++Shift+minus move scratchpad
 
     # Focus between floating and split containers.
@@ -242,33 +242,32 @@ bindsym --to-code {
 # APPEARANCE
 # ----------
 
+# Color names.
+set {
+    $background #0a0b08
+    $foreground #e0dcd7
+    $unfocused  #4e4b47
+    $urgent     #ab4649
+}
+
 # Default font.
-font Iosevka 9
+font Iosevka 10
 
 # Solid color background by default.
-output * bg #282828 solid_color
+output * bg $foreground solid_color
 
 # Borders and gaps.
 default_border          pixel 2
-default_floating_border pixel 2
+default_floating_border normal 2
 hide_edge_borders --i3  smart
 
 gaps inner 10
 smart_gaps on
 
-# Color names.
-set {
-    $background #282828
-    $foreground #d8d8d8
-    $focused    #2d2d2d
-    $unfocused  #585858
-    $urgent     #ab4642
-}
-
 # Window manager colors.
-# Class                 Border      Background  Text        Indicator    Child Border
-client.focused          $background $background $foreground $focused     $unfocused
-client.focused_inactive $background $background $unfocused  $focused
+# Class                 Border      Background  Text        Indicator   Child Border
+client.focused          $background $background $foreground $foreground $background
+client.focused_inactive $background $background $unfocused  $foreground
 client.unfocused        $background $background $unfocused  $background
 client.urgent           $urgent     $urgent     $background $urgent
 client.background                   $background
@@ -346,11 +345,16 @@ bar {
 # ---------------
 
 # Load any additional global and user-defined configuration.
-include /etc/sway/config.d/*
-include ~/.config/sway/config.d/*
+include {
+    /etc/sway/config.d/*
+    ~/.config/sway/config.d/*
+}
 
 # Auto-start any executables placed in the 'autostart' directory.
-exec ~/.config/sway/autostart/*
+exec {
+    ~/.config/sway/autostart/keyboard-layout-per-window
+    ~/.config/sway/autostart/inactive-window-transparency
+}
 
 # Ensure final systemd target is met.
 exec systemctl --user start sway-session.target

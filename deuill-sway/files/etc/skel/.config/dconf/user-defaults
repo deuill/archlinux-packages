@@ -1,6 +1,4 @@
 [org/gnome/desktop/interface]
-gtk-theme="Materia:dark"
-document-font-name="IBM Plex Sans 9"
-font-name="IBM Plex Sans 9"
-monospace-font-name="IBM Plex Mono 9"
-cursor-theme="capitaine-cursors"
+font-name="Iosevka 10"
+document-font-name="Noto Sans 9"
+monospace-font-name="Iosevka 10"

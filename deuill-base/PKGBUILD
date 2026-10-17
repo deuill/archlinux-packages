@@ -1,6 +1,6 @@
 # Maintainer: Marid de Uill <code@deuill.org>
 pkgname=deuill-base
-pkgver=1.0.6
+pkgver=1.0.7
 pkgrel=1
 pkgdesc="Base system configuration for deuill systems"
 arch=("any")
@@ -19,7 +19,6 @@ depends=(
     fish
     man-db
     pam-u2f
-    ttc-iosevka
     nano
 
     # Other libraries.

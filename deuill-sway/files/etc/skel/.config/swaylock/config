@@ -1,8 +1,41 @@
+# Size and position.
+indicator-idle-visible
+
 # Fonts.
 font=Iosevka
-font-size=20
+font-size=24
 
-# Colors and wallpaper.
+# Wallpaper.
 image=~/.config/sway/default-bg
 scaling=fill
-color=282828
+
+# Colors
+color=#e0dcd7
+bs-hl-color=#ab4649
+caps-lock-bs-hl-color=#ab4649
+caps-lock-key-hl-color=#1d1b19
+inside-color=#e0dcd7
+inside-clear-color=#e0dcd7
+inside-caps-lock-color=#e0dcd7
+inside-ver-color=#e0dcd7
+inside-wrong-color=#e0dcd7
+key-hl-color=#a9a5a0
+layout-bg-color=#e0dcd7
+layout-border-color=#a9a5a0
+layout-text-color=#2c2b23
+line-color=#a9a5a0
+line-clear-color=#928d88
+line-caps-lock-color=#ab4649
+line-ver-color=#2c2b23
+line-wrong-color=#ab4649
+ring-color=#c4c0bb
+ring-clear-color=#a9a5a0
+ring-caps-lock-color=#ab4649
+ring-ver-color=#4e4b47
+ring-wrong-color=#ab4649
+separator-color=#00000000
+text-color=#2c2b23
+text-clear-color=#1d1b19
+text-caps-lock-color=#ab4649
+text-ver-color=#2c2b23
+text-wrong-color=#ab4649

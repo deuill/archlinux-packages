@@ -7,35 +7,42 @@ set selection-clipboard clipboard
 set font                    "Iosevka 10"
 set guioptions              ""
 
-set default-bg              "#2d2d2d"
-set default-fg              "#282828"
+set default-bg              "#e0dcd7"
+set default-fg              "#1d1b19"
 
-set statusbar-fg            "#b8b8b8"
-set statusbar-bg            "#383838"
+set statusbar-bg            "#0a0b08"
+set statusbar-fg            "#e0dcd7"
 
-set inputbar-bg             "#181818"
-set inputbar-fg             "#f8f8f8"
+set inputbar-bg             "#0a0b08"
+set inputbar-fg             "#e0dcd7"
 
-set notification-bg         "#181818"
-set notification-fg         "#f8f8f8"
+set notification-bg         "#0a0b08"
+set notification-fg         "#e0dcd7"
 
-set notification-error-bg   "#181818"
-set notification-error-fg   "#ab4642"
+set notification-error-bg   "#ab4649"
+set notification-error-fg   "#e0dcd7"
 
-set notification-warning-bg "#181818"
-set notification-warning-fg "#ab4642"
+set notification-warning-bg "#0a0b08"
+set notification-warning-fg "#ab4649"
 
-set highlight-color         "#f7ca88"
-set highlight-active-color  "#7cafc2"
+set highlight-color         "rgba(171, 70, 66, 0.5)"
+set highlight-active-color  "rgba(171, 70, 66, 0.5)"
+set highlight-fg            "#0a0b08"
 
-set completion-bg           "#282828"
-set completion-fg           "#7cafc2"
+set completion-bg           "#1d1b19"
+set completion-fg           "#e0dcd7"
 
-set completion-highlight-fg "#f8f8f8"
-set completion-highlight-bg "#7cafc2"
+set completion-highlight-bg "#1d1b19"
+set completion-highlight-fg "#e0dcd7"
 
-set recolor-lightcolor      "#2d2d2d"
-set recolor-darkcolor       "#f8f8f8"
+set index-bg                "#e0dcd7"
+set index-fg                "#1d1b19"
 
-set recolor                 "true"
+set index-active-bg         "#ab4649"
+set index-active-fg         "#f7f3ef"
+
+set recolor-lightcolor      "#f7f3ef"
+set recolor-darkcolor       "#1d1b19"
+
+set recolor                 "false"
 set recolor-keephue         "true"

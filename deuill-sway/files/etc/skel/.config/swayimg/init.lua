@@ -45,7 +45,7 @@ end)
 
 -- Gallery mode
 swayimg.gallery.set_thumb_size(300)              -- thumbnail size in pixels
-swayimg.gallery.set_border_color(0xffab4642)     -- border color for selected thumbnail
+swayimg.gallery.set_border_color(0xffab4649)     -- border color for selected thumbnail
 swayimg.gallery.set_selected_scale(1.15)         -- scale for selected thumbnail
 swayimg.gallery.set_selected_color(0xff333333)   -- background color for selected thumbnail
 swayimg.gallery.set_unselected_color(0xff202020) -- background color for unselected thumbnail

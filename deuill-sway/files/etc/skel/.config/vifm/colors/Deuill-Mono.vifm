@@ -1,0 +1,31 @@
+" Deuill-Mono
+" by Marid de Uill
+
+highlight clear
+
+highlight  Border      cterm=none               ctermfg=lightblack ctermbg=default
+highlight  BrokenLink  cterm=none               ctermfg=red        ctermbg=default
+highlight  CmdLine     cterm=none               ctermfg=black      ctermbg=default
+highlight  CurrLine    cterm=bold               ctermfg=white      ctermbg=red        guifg=#f7f3ef guibg=#ab4649
+highlight  Device      cterm=none               ctermfg=red        ctermbg=default
+highlight  Directory   cterm=none               ctermfg=blue       ctermbg=default
+highlight  ErrorMsg    cterm=none               ctermfg=red        ctermbg=default
+highlight  Executable  cterm=none               ctermfg=green      ctermbg=default
+highlight  Fifo        cterm=none               ctermfg=cyan       ctermbg=default
+highlight  Link        cterm=none               ctermfg=green      ctermbg=default
+highlight  OtherLine   cterm=none               ctermfg=default    ctermbg=lightgreen               guibg=#c4c0bb
+highlight  Selected    cterm=none               ctermfg=red        ctermbg=default
+highlight  Socket      cterm=none               ctermfg=magenta    ctermbg=default
+highlight  StatusLine  cterm=none               ctermfg=white      ctermbg=black
+highlight  SuggestBox  cterm=none               ctermfg=black      ctermbg=default
+highlight  TopLine     cterm=none               ctermfg=white      ctermbg=black      guifg=#c4c0bb guibg=#1d1b19
+highlight  TopLineSel  cterm=bold               ctermfg=white      ctermbg=default
+highlight  WildMenu    cterm=underline,reverse  ctermfg=black      ctermbg=default
+highlight  Win         cterm=none               ctermfg=black      ctermbg=default
+highlight  JobLine     cterm=none               ctermfg=default    ctermbg=green
+
+if $USER == 'root'
+    highlight  Border      cterm=none  ctermfg=default  ctermbg=red
+    highlight  StatusLine  cterm=none  ctermfg=black    ctermbg=red
+    highlight  TopLine     cterm=none  ctermfg=default  ctermbg=red
+endif

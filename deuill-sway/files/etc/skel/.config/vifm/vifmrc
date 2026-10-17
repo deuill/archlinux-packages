@@ -5,6 +5,9 @@
 " Default editor.
 set vicmd='#editor#run emacs'
 
+" Default shell
+let $SHELL='/usr/bin/fish'
+
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
 " solution, it's also much slower when processing large amounts of files and
@@ -74,7 +77,7 @@ set previewoptions=hardgraphicsclear
 set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " List of color schemes to try (picks the first one supported by the terminal)
-colorscheme Base16-Default-Dark
+colorscheme Deuill-Mono
 
 " ------------------------------------------------------------------------------
 " Bookmarks
@@ -172,7 +175,7 @@ fileviewer {*.avi,*.mp4,*.ogv,*.mkv,*.mpeg,*.webm,*.m4v,},<video/*>
 " Code & Data
 fileviewer {*.json},<text/*>
          \ timeout 5s
-         \ highlight --out-format truecolor --style base16/default-dark %c
+         \ highlight --out-format ansi %c
 filetype {*.json},<text/*>
          \ emacs --no-window-system %c 2>/dev/null
 

@@ -1,0 +1,18 @@
+# Monochrome Jolt theme.
+name = "deuill-mono"
+
+[dark]
+bg               = "#e0dcd7"
+dialog_bg        = "#f7f3ef"
+fg               = "#1d1b19"
+accent           = "#2c2b23"
+accent_secondary = "#4e4b47"
+highlight        = "#0a0b08"
+muted            = "#4e4b47"
+success          = "#2c2b23"
+warning          = "#1d1b19"
+danger           = "#ab4649"
+border           = "#4e4b47"
+selection_bg     = "#ab4649"
+selection_fg     = "#f7f3ef"
+graph_line       = "#ab4649"

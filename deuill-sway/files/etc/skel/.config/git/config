@@ -1,0 +1,9 @@
+[color]
+	ui = 1
+[color "diff"]
+	frag = red
+	func = ul
+	old = dim
+	new = bold
+[include]
+	path = config.local

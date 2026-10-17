@@ -1,7 +1,7 @@
 configuration {
 	// Base configuration.
 	dpi: 96;
-	font: "Iosevka 10.5";
+	font: "Iosevka 9";
 	matching: "prefix";
 	modi: "run,calc,filebrowser";
 	sidebar-mode: false;
@@ -22,4 +22,4 @@ configuration {
 	kb-element-prev: "ISO_Left_Tab";
 }
 
-@theme "base16"
+@theme "deuill-mono"
